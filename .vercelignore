@@ -1,0 +1,6 @@
+# Original source images are kept in the repository for future edits but are
+# not needed at runtime. The optimized WebP/JPG versions are deployed instead.
+images/background.png
+images/Mobile_bg.png
+images/Logo.jpg
+README.md

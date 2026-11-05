@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Kumar // AI/ML Engineer — Hacker Mode</title>
+    <meta name="description" content="Hacker Mode portfolio of Abhishek Kumar, an AI/ML engineer building production speech, vision, and generative AI systems. Explore the 3D terminal, case files, and interactive command palette.">
+    <meta name="author" content="Abhishek Kumar">
+    <meta name="theme-color" content="#030806">
+    <meta name="color-scheme" content="dark">
+    <meta name="robots" content="noindex, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Abhishek Kumar — Hacker Mode">
+    <meta property="og:title" content="Abhishek Kumar // AI/ML Engineer — Hacker Mode">
+    <meta property="og:description" content="A fully interactive, terminal-inspired portfolio: 3D neural hero, case files, and production AI systems.">
+    <meta property="og:url" content="https://personal-portfolio-jet-nine.vercel.app/hacker.html">
+    <meta property="og:image" content="https://personal-portfolio-jet-nine.vercel.app/images/og-cover.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Abhishek Kumar // AI/ML Engineer — Hacker Mode">
+    <meta name="twitter:description" content="A fully interactive, terminal-inspired portfolio: 3D neural hero, case files, and production AI systems.">
+    <meta name="twitter:image" content="https://personal-portfolio-jet-nine.vercel.app/images/og-cover.jpg">
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin-variable.woff2" crossorigin>
+    <link rel="preload" as="image" href="images/mobile-bg.webp" fetchpriority="high">
+    <link rel="stylesheet" href="hacker.css">
+    <script>document.documentElement.classList.add('js');</script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Abhishek Kumar",
+        "jobTitle": "AI/ML Engineer",
+        "description": "AI/ML engineer building production speech, vision, and generative AI systems.",
+        "url": "https://personal-portfolio-jet-nine.vercel.app/hacker.html",
+        "image": "https://personal-portfolio-jet-nine.vercel.app/images/og-cover.jpg",
+        "email": "mailto:abhishekkumarnwd71@gmail.com",
+        "telephone": "+91-94318-53882",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Noida",
+          "addressRegion": "Uttar Pradesh",
+          "addressCountry": "IN"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Oriental Institute of Science and Technology"
+        },
+        "sameAs": [
+          "https://github.com/abhish12345",
+          "https://www.linkedin.com/in/abhishek-kumar-a26b3522a/"
+        ],
+        "knowsAbout": [
+          "Machine Learning",
+          "Speech Recognition",
+          "Speaker Identification",
+          "Computer Vision",
+          "Retrieval-Augmented Generation",
+          "GraphRAG",
+          "PyTorch",
+          "FastAPI",
+          "Docker",
+          "AWS"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-command" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3Z"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V4M6 10l6-6 6 6"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21h-4z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6.4 6.4l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 19v3M8 22h8"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/><rect x="10" y="10" width="4" height="4"/></symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="m7 9 3 3-3 3M13 15h4"/></symbol>
+      <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9Z"/><path d="m19 16 .9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9Z"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    </svg>
+
+    <div class="boot" id="boot-screen" aria-hidden="true" hidden>
+      <div class="boot__inner">
+        <div class="boot__logo">AK<span>_</span>OS</div>
+        <p class="boot__title">PORTFOLIO BOOT SEQUENCE // v2.6</p>
+        <div class="boot__log">
+          <p><span>[ OK ]</span> mounting /dev/portfolio</p>
+          <p><span>[ OK ]</span> loading neural canvas</p>
+          <p><span>[ OK ]</span> verifying identity: abhishek_kumar</p>
+          <p class="boot__grant">&gt; access granted</p>
+        </div>
+        <div class="boot__progress"><span id="boot-progress"></span></div>
+        <p class="boot__hint">press any key to skip</p>
+      </div>
+    </div>
+
+    <div class="fx-layer" aria-hidden="true">
+      <canvas id="matrix-canvas"></canvas>
+      <div class="fx-scanlines"></div>
+      <div class="fx-noise"></div>
+      <div class="fx-vignette"></div>
+    </div>
+
+    <header class="site-header" id="top">
+      <div class="status-bar">
+        <div class="container status-bar__inner">
+          <span class="sys-id"><span class="status-dot" aria-hidden="true"></span> SYS://AK-PORTFOLIO v2.6</span>
+          <span class="status-bar__mid">NODE: NOIDA, IN &middot; 28.5355&deg;N 77.3910&deg;E</span>
+          <span class="status-bar__right"><span id="clock">--:--</span> IST <span class="sep">/</span> <span class="availability">OPEN TO WORK</span></span>
+        </div>
+      </div>
+      <nav class="main-nav container" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Abhishek Kumar — back to top">
+          <span class="brand__mark" aria-hidden="true">[AK]</span>
+          <span class="brand__text"><span class="brand__prompt">~/</span>abhishek<span class="brand__cursor" aria-hidden="true">_</span></span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="nav-menu" aria-expanded="false">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+        </button>
+
+        <div class="nav-drawer" id="nav-menu">
+          <div class="nav-drawer__head">
+            <span>// NAVIGATE</span>
+            <button class="nav-close" type="button" aria-label="Close menu" data-close-nav>
+              <svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg>
+            </button>
+          </div>
+          <ul class="nav-links">
+            <li><a class="nav-link active" href="#home" aria-current="page"><span>00</span>home</a></li>
+            <li><a class="nav-link" href="#about"><span>01</span>about</a></li>
+            <li><a class="nav-link" href="#terminal"><span>02</span>terminal</a></li>
+            <li><a class="nav-link" href="#experience"><span>03</span>experience</a></li>
+            <li><a class="nav-link" href="#projects"><span>04</span>projects</a></li>
+            <li><a class="nav-link" href="#contact"><span>05</span>contact</a></li>
+          </ul>
+          <div class="nav-drawer__foot">
+            <a class="recruiter-link" href="index.html">Recruiter Mode <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+            <p>clean layout &middot; same experience &middot; no terminal</p>
+          </div>
+        </div>
+
+        <div class="nav-actions">
+          <button class="palette-trigger" type="button" data-open-palette aria-label="Open command palette">
+            <svg class="icon" aria-hidden="true"><use href="#i-command"></use></svg>
+            <span class="palette-trigger__label">cmd</span>
+            <kbd>Ctrl K</kbd>
+          </button>
+          <a class="recruiter-link recruiter-link--nav" href="index.html">
+            <span class="recruiter-link__dot" aria-hidden="true"></span>Recruiter Mode
+          </a>
+        </div>
+      </nav>
+      <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+    </header>
+    <div class="nav-backdrop" data-close-nav></div>
+
+    <main id="main" tabindex="-1">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <canvas class="hero-canvas" id="scene-canvas" aria-hidden="true"></canvas>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow--a" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow--b" aria-hidden="true"></div>
+
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow" data-reveal><span class="status-dot" aria-hidden="true"></span> SYSTEM ONLINE <span class="eyebrow__sep">//</span> AI/ML ENGINEER</p>
+            <h1 class="hero-title" id="hero-title" data-text="ABHISHEK KUMAR">
+              <span class="hero-title__line">ABHISHEK</span>
+              <span class="hero-title__line hero-title__line--accent">KUMAR</span>
+            </h1>
+            <p class="hero-role">
+              <span class="prompt" aria-hidden="true">&gt;</span>
+              <span class="sr-only">AI/ML Engineer specializing in speech, vision, and generative AI.</span>
+              <span class="typed-role" aria-hidden="true">AI/ML Engineer</span><span class="typed-cursor" aria-hidden="true"></span>
+            </p>
+            <p class="hero-lede" data-reveal>I build production AI systems that <strong>see</strong>, <strong>hear</strong>, and <strong>reason</strong> &mdash; from real-time voice biometrics to multi-model computer vision and GraphRAG platforms. 2.5+ years turning research into systems people can actually use.</p>
+            <div class="hero-actions" data-reveal>
+              <a class="btn btn--primary" href="#projects"><span aria-hidden="true">$</span> ls ./projects <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+              <a class="btn btn--ghost" href="images/Abhishek_Kumar_CV.pdf" download="Abhishek_Kumar_CV.pdf"><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg> download cv</a>
+              <a class="btn btn--text" href="index.html">Recruiter Mode <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+            </div>
+            <dl class="hero-stats" data-reveal>
+              <div><dt>Experience</dt><dd>2.5<span>+</span></dd></div>
+              <div><dt>Voice accuracy</dt><dd>94<span>%</span></dd></div>
+              <div><dt>Entities screened</dt><dd>30K<span>+</span></dd></div>
+              <div><dt>Cameras</dt><dd>50<span>+</span></dd></div>
+            </dl>
+            <div class="hero-terminal" data-reveal>
+              <div class="terminal-bar" aria-hidden="true"><span class="terminal-dots"><i></i><i></i><i></i></span><span>abhishek@portfolio: ~</span><span class="terminal-bar__tag">zsh</span></div>
+              <div class="terminal-body">
+                <p><span class="t-prompt">$</span> whoami</p>
+                <p class="t-out">AI/ML engineer &mdash; speech, vision &amp; generative AI</p>
+                <p><span class="t-prompt">$</span> cat /etc/focus</p>
+                <p class="t-out">production systems &middot; evaluation &middot; measurable impact</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" data-reveal>
+            <figure class="operator">
+              <div class="operator__orbit operator__orbit--one" aria-hidden="true"></div>
+              <div class="operator__orbit operator__orbit--two" aria-hidden="true"></div>
+              <div class="operator__frame" data-tilt>
+                <div class="operator__hud" aria-hidden="true">
+                  <span>ID // AK-2026</span><span class="live"><i></i> LIVE</span>
+                </div>
+                <div class="operator__portrait">
+                  <img src="images/mobile-bg.webp" alt="Portrait of Abhishek Kumar" width="1080" height="1920" fetchpriority="high">
+                  <div class="operator__scan" aria-hidden="true"></div>
+                  <div class="operator__mesh" aria-hidden="true"></div>
+                  <span class="hud-tag hud-tag--a" aria-hidden="true">VOICE_ID // 94%</span>
+                  <span class="hud-tag hud-tag--b" aria-hidden="true">VISION // 50 CAMS</span>
+                  <span class="hud-corner hud-corner--tl" aria-hidden="true"></span>
+                  <span class="hud-corner hud-corner--tr" aria-hidden="true"></span>
+                  <span class="hud-corner hud-corner--bl" aria-hidden="true"></span>
+                  <span class="hud-corner hud-corner--br" aria-hidden="true"></span>
+                </div>
+                <div class="operator__caption">
+                  <span><strong>ABHISHEK KUMAR</strong><small>AI/ML ENGINEER</small></span>
+                  <span class="operator__sig" aria-hidden="true">AK</span>
+                </div>
+              </div>
+              <p class="operator__meta" aria-hidden="true"><span>NODE: NOIDA, IN</span><span>STATUS: AVAILABLE</span></p>
+            </figure>
+          </div>
+        </div>
+
+        <a class="scroll-cue" href="#about"><span class="scroll-cue__line" aria-hidden="true"></span> cd ./about <span aria-hidden="true">&darr;</span></a>
+      </section>
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container">
+          <header class="section-head" data-reveal>
+            <p class="section-kicker">01 // OPERATOR PROFILE</p>
+            <h2 id="about-title"><span class="prompt" aria-hidden="true">&gt;</span> whoami<span class="section-cursor" aria-hidden="true">_</span></h2>
+            <p class="section-lede">I like the hard part: taking a model out of a notebook and making it fast, observable, and genuinely useful in production.</p>
+          </header>
+
+          <div class="about-grid">
+            <div class="panel panel--terminal" data-reveal>
+              <div class="panel-bar">
+                <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>~/about/operator.log</span>
+                <span class="panel-bar__tag">READ</span>
+              </div>
+              <div class="about-log" aria-hidden="true">
+                <p><span class="log-num">001</span><span class="log-key">name</span><span class="log-val">abhishek_kumar</span></p>
+                <p><span class="log-num">002</span><span class="log-key">role</span><span class="log-val">ai_ml_engineer</span></p>
+                <p><span class="log-num">003</span><span class="log-key">focus</span><span class="log-val">[speech, vision, genai]</span></p>
+                <p><span class="log-num">004</span><span class="log-key">location</span><span class="log-val">noida_in</span></p>
+                <p><span class="log-num">005</span><span class="log-key">status</span><span class="log-val log-val--live">open_to_work</span></p>
+              </div>
+              <div class="about-copy">
+                <p>My work spans real-time speaker identification, document intelligence, adverse-media risk, and hybrid RAG / GraphRAG systems. I care about the whole path &mdash; data quality, evaluation, latency, deployment, and the interface that makes an AI system legible to the people using it.</p>
+                <p>Currently at <strong>Softel Solutions</strong>, I build retrieval platforms, geospatial ingestion pipelines, and STT/TTS microservices. Before that, I shipped AML risk tooling at <strong>Azine Web Technologies</strong> and worked on computer vision and biometric systems at <strong>Phoenix Labs Global</strong>.</p>
+              </div>
+            </div>
+
+            <div class="dossier" data-reveal role="group" aria-label="Quick profile">
+              <div class="dossier__head">
+                <span>QUICK_DOSSIER</span>
+                <span class="dossier__status"><i aria-hidden="true"></i> AVAILABLE</span>
+              </div>
+              <dl class="dossier__list">
+                <div><dt>Role</dt><dd>AI/ML Engineer</dd></div>
+                <div><dt>Focus</dt><dd>Speech &middot; Vision &middot; GenAI</dd></div>
+                <div><dt>Base</dt><dd>Noida, India</dd></div>
+                <div><dt>Remote</dt><dd>Yes / hybrid</dd></div>
+                <div><dt>Experience</dt><dd>2.5+ years</dd></div>
+                <div><dt>Education</dt><dd>B.Tech, ECE</dd></div>
+              </dl>
+              <div class="dossier__stack">
+                <span>PyTorch</span><span>FastAPI</span><span>Docker</span><span>AWS</span>
+              </div>
+              <a class="btn btn--primary btn--full" href="images/Abhishek_Kumar_CV.pdf" download="Abhishek_Kumar_CV.pdf"><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg> download dossier</a>
+              <p class="dossier__note">PDF &middot; 2 pages &middot; updated 2026</p>
+            </div>
+          </div>
+
+          <div class="arsenal" data-reveal>
+            <div class="arsenal__head">
+              <div>
+                <p class="mini-kicker">// CAPABILITY MATRIX</p>
+                <h3>tech.arsenal</h3>
+              </div>
+              <div class="filter-group" role="group" aria-label="Filter skills by category">
+                <button class="filter is-active" type="button" data-skill-filter="all" aria-pressed="true">all <span>34</span></button>
+                <button class="filter" type="button" data-skill-filter="genai" aria-pressed="false">genai <span>8</span></button>
+                <button class="filter" type="button" data-skill-filter="speech" aria-pressed="false">speech <span>6</span></button>
+                <button class="filter" type="button" data-skill-filter="vision" aria-pressed="false">vision <span>6</span></button>
+                <button class="filter" type="button" data-skill-filter="ml" aria-pressed="false">ml <span>6</span></button>
+                <button class="filter" type="button" data-skill-filter="backend" aria-pressed="false">backend <span>8</span></button>
+              </div>
+            </div>
+            <ul class="skill-grid" id="skill-grid">
+              <li class="skill" data-cat="genai"><span aria-hidden="true">+</span>LangChain</li>
+              <li class="skill" data-cat="genai"><span aria-hidden="true">+</span>LangGraph</li>
+              <li class="skill" data-cat="genai"><span aria-hidden="true">+</span>LlamaIndex</li>
+              <li class="skill" data-cat="genai"><span aria-hidden="true">+</span>RAG</li>
+              <li class="skill" data-cat="genai"><span aria-hidden="true">+</span>GraphRAG</li>
+              <li class="skill" data-cat="genai"><span aria-hidden="true">+</span>Neo4j</li>
+              <li class="skill" data-cat="genai"><span aria-hidden="true">+</span>ChromaDB</li>
+              <li class="skill" data-cat="genai"><span aria-hidden="true">+</span>Qdrant</li>
+              <li class="skill" data-cat="speech"><span aria-hidden="true">+</span>ECAPA-TDNN</li>
+              <li class="skill" data-cat="speech"><span aria-hidden="true">+</span>Wav2Vec2</li>
+              <li class="skill" data-cat="speech"><span aria-hidden="true">+</span>Whisper</li>
+              <li class="skill" data-cat="speech"><span aria-hidden="true">+</span>Bark / Coqui TTS</li>
+              <li class="skill" data-cat="speech"><span aria-hidden="true">+</span>Speaker ID</li>
+              <li class="skill" data-cat="speech"><span aria-hidden="true">+</span>Audio Diarization</li>
+              <li class="skill" data-cat="vision"><span aria-hidden="true">+</span>YOLOv8 / v11</li>
+              <li class="skill" data-cat="vision"><span aria-hidden="true">+</span>OpenCV</li>
+              <li class="skill" data-cat="vision"><span aria-hidden="true">+</span>RetinaFace</li>
+              <li class="skill" data-cat="vision"><span aria-hidden="true">+</span>ArcFace</li>
+              <li class="skill" data-cat="vision"><span aria-hidden="true">+</span>PaddleOCR</li>
+              <li class="skill" data-cat="vision"><span aria-hidden="true">+</span>Tesseract</li>
+              <li class="skill" data-cat="ml"><span aria-hidden="true">+</span>PyTorch</li>
+              <li class="skill" data-cat="ml"><span aria-hidden="true">+</span>TensorFlow</li>
+              <li class="skill" data-cat="ml"><span aria-hidden="true">+</span>Scikit-learn</li>
+              <li class="skill" data-cat="ml"><span aria-hidden="true">+</span>DistilBERT</li>
+              <li class="skill" data-cat="ml"><span aria-hidden="true">+</span>SVM</li>
+              <li class="skill" data-cat="ml"><span aria-hidden="true">+</span>XGBoost</li>
+              <li class="skill" data-cat="backend"><span aria-hidden="true">+</span>Python</li>
+              <li class="skill" data-cat="backend"><span aria-hidden="true">+</span>FastAPI</li>
+              <li class="skill" data-cat="backend"><span aria-hidden="true">+</span>Django</li>
+              <li class="skill" data-cat="backend"><span aria-hidden="true">+</span>Docker</li>
+              <li class="skill" data-cat="backend"><span aria-hidden="true">+</span>AWS</li>
+              <li class="skill" data-cat="backend"><span aria-hidden="true">+</span>MongoDB</li>
+              <li class="skill" data-cat="backend"><span aria-hidden="true">+</span>PostgreSQL</li>
+              <li class="skill" data-cat="backend"><span aria-hidden="true">+</span>Redis</li>
+            </ul>
+            <p class="filter-status" id="skill-status" role="status" aria-live="polite">Showing all 34 capabilities</p>
+          </div>
+
+          <div class="edu-grid">
+            <div class="panel" data-reveal>
+              <div class="panel-bar">
+                <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>~/education.log</span>
+                <span class="panel-bar__tag">2 ENTRIES</span>
+              </div>
+              <ol class="edu-list">
+                <li>
+                  <span class="edu-date">2020 &mdash; 2024</span>
+                  <div>
+                    <h3>B.Tech, Electronics &amp; Communication Engineering</h3>
+                    <p>Oriental Institute of Science and Technology &mdash; Bhopal, India</p>
+                    <span class="edu-note">CGPA 8.17 / 10 &middot; AI/ML, DSP, data structures</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="edu-date">2024 &mdash; 2025</span>
+                  <div>
+                    <h3>Java &amp; Python Full Stack Training</h3>
+                    <p>Kodnest &mdash; Aug 2024 to Jan 2025</p>
+                    <span class="edu-note">Practical application development across the stack</span>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div class="panel" data-reveal>
+              <div class="panel-bar">
+                <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>~/certs.db</span>
+                <span class="panel-bar__tag">VERIFIED</span>
+              </div>
+              <ul class="cert-list">
+                <li><span class="cert-mark" aria-hidden="true">[+]</span><span>Oracle Cloud Infrastructure: Certified AI Foundations Associate</span><time datetime="2025-03">MAR 2025</time></li>
+                <li><span class="cert-mark" aria-hidden="true">[+]</span><span>NLP Mastery in Python &mdash; Udemy</span><time datetime="2025-07">JUL 2025</time></li>
+                <li><span class="cert-mark" aria-hidden="true">[+]</span><span>Data Science &amp; ML Bootcamp &mdash; Udemy</span><time datetime="2025-07">JUL 2025</time></li>
+                <li><span class="cert-mark" aria-hidden="true">[+]</span><span>Machine Learning Internship &mdash; Infosys Springboard</span><time datetime="2024-12">DEC 2024</time></li>
+                <li><span class="cert-mark" aria-hidden="true">[+]</span><span>Deep Learning for Developers &mdash; Infosys</span><time datetime="2024-08">AUG 2024</time></li>
+                <li><span class="cert-mark" aria-hidden="true">[+]</span><span>SQL for Data Science &mdash; UC Davis / Coursera</span><time datetime="2023-05">MAY 2023</time></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+            <section class="section" id="terminal" aria-labelledby="terminal-title">
+        <div class="container">
+          <header class="section-head" data-reveal>
+            <p class="section-kicker">02 // INTERACTIVE REPL</p>
+            <h2 id="terminal-title"><span class="prompt" aria-hidden="true">&gt;</span> ./terminal --live</h2>
+            <p class="section-lede">Direct interface to the engineering workstation. Run commands, test the Ragas benchmark, or inspect production telemetry.</p>
+          </header>
+
+          <div class="interactive-terminal" data-reveal>
+            <div class="terminal-bar">
+              <div class="terminal-dots" aria-hidden="true">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--yellow"></span>
+                <span class="dot dot--green"></span>
+              </div>
+              <div class="terminal-bar__title">abhishek@ai-cluster: ~ (bash)</div>
+              <div class="terminal-bar__status"><span class="status-dot"></span> LIVE REPL</div>
+            </div>
+
+            <!-- Quick Command Pills for 1-click execution -->
+            <div class="cli-pills" role="toolbar" aria-label="Terminal command shortcuts">
+              <button class="cli-pill" type="button" data-cli-cmd="help">help</button>
+              <button class="cli-pill" type="button" data-cli-cmd="whoami">whoami</button>
+              <button class="cli-pill" type="button" data-cli-cmd="skills">skills</button>
+              <button class="cli-pill" type="button" data-cli-cmd="projects">projects</button>
+              <button class="cli-pill" type="button" data-cli-cmd="run rag-eval">run rag-eval</button>
+              <button class="cli-pill" type="button" data-cli-cmd="cat resume">cat resume</button>
+              <button class="cli-pill" type="button" data-cli-cmd="contact">contact</button>
+              <button class="cli-pill" type="button" data-cli-cmd="clear">clear</button>
+            </div>
+
+            <!-- Terminal Output Window -->
+            <div class="terminal-screen" id="terminal-screen" tabindex="0" role="log" aria-live="polite" aria-label="Terminal output log">
+              <div class="terminal-line banner-line">
+                <span class="term-green">ABHISHEK KUMAR [AI/ML WORKSTATION v2.6.0]</span><br>
+                <span class="term-dim">OS: Linux 6.8.0-x86_64 // Hardware: 8x NVIDIA A100-SXM4-80GB (Active)</span><br>
+                <span class="term-cyan">Type <b>help</b> or click any command shortcut above to explore.</span>
+              </div>
+            </div>
+
+            <!-- Terminal Input Line -->
+            <form class="terminal-input-form" id="terminal-form" autocomplete="off">
+              <span class="term-prompt">visitor@ai-cluster:~$</span>
+              <input type="text" id="terminal-input" class="terminal-input" placeholder="type 'help', 'skills', 'run rag-eval'..." aria-label="Terminal command input" spellcheck="false" autocomplete="off" autocapitalize="none">
+              <button type="submit" class="terminal-submit-btn" aria-label="Execute command"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <div class="container">
+          <header class="section-head" data-reveal>
+            <p class="section-kicker">02 // CAREER TRACE</p>
+            <h2 id="experience-title"><span class="prompt" aria-hidden="true">&gt;</span> cat experience.log</h2>
+            <p class="section-lede">Production work across speech, vision, generative AI, and data engineering &mdash; with the numbers attached.</p>
+          </header>
+
+          <ol class="exp-list">
+            <li class="exp" data-reveal>
+              <div class="exp__meta">
+                <span class="badge badge--live"><i aria-hidden="true"></i> RUNNING</span>
+                <time datetime="2026-03">MAR 2026 &mdash; PRESENT</time>
+                <span>Noida, IN</span>
+              </div>
+              <div class="exp__body">
+                <div class="exp__title-row">
+                  <h3>Python Developer (AI/ML)</h3>
+                  <span class="exp__company">@ Softel Solutions</span>
+                </div>
+                <ul class="exp__bullets">
+                  <li><strong>Real-time speaker ID</strong> &mdash; deployed a voice biometric system using PyTorch, ECAPA-TDNN (Wav2Vec2), and ChromaDB, reaching 94% accuracy across 250+ users.</li>
+                  <li><strong>Enterprise hybrid RAG / GraphRAG</strong> &mdash; scaled a retrieval platform to 15K+ daily queries for 1,200+ users with FastAPI, Neo4j, ChromaDB, and Redis RQ; a 400-query Ragas evaluation cut hallucinations by 22% and latency by 35%.</li>
+                  <li><strong>Geospatial data pipeline</strong> &mdash; built an asyncio / multi-threaded ingestion engine for 100+ atmospheric parameters and satellite tiles, with 10K-document MongoDB bulk writes and 40% higher throughput.</li>
+                  <li><strong>STT / TTS microservices</strong> &mdash; shipped Whisper and Bark / Coqui speech services with FastAPI and Docker.</li>
+                </ul>
+                <ul class="tags">
+                  <li>PyTorch</li><li>ECAPA-TDNN</li><li>GraphRAG</li><li>FastAPI</li><li>Neo4j</li><li>Redis</li><li>Whisper</li><li>Docker</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="exp" data-reveal>
+              <div class="exp__meta">
+                <span class="badge">ARCHIVED</span>
+                <time datetime="2025-02">FEB 2025 &mdash; FEB 2026</time>
+                <span>Ahmedabad, IN</span>
+              </div>
+              <div class="exp__body">
+                <div class="exp__title-row">
+                  <h3>Machine Learning Engineer</h3>
+                  <span class="exp__company">@ Azine Web Technologies</span>
+                </div>
+                <ul class="exp__bullets">
+                  <li><strong>AML adverse-media &amp; entity risk</strong> &mdash; architected a multi-source screening platform with PEP / SAN / KYB checks and a weighted 0&ndash;100 risk score across 30,000+ entities.</li>
+                  <li><strong>Compliance &amp; news intelligence</strong> &mdash; integrated 200+ OpenSanctions datasets and live news feeds with DistilBERT and SVM classifiers, increasing high-risk detection by 28% and reducing manual effort by 65%.</li>
+                  <li><strong>Real-time vision &amp; identity verification</strong> &mdash; deployed liveness detection, signature recognition, and barcode extraction APIs with YOLOv11, OpenCV, and FastAPI, achieving 95%+ field accuracy.</li>
+                  <li><strong>Automated data pipelines</strong> &mdash; built ETL scrapers across 150+ government portals with Selenium, BeautifulSoup, and PDFPlumber on 3-day cron cycles.</li>
+                </ul>
+                <ul class="tags">
+                  <li>DistilBERT</li><li>SVM</li><li>YOLOv11</li><li>OpenCV</li><li>FastAPI</li><li>MongoDB</li><li>Selenium</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="exp" data-reveal>
+              <div class="exp__meta">
+                <span class="badge">ARCHIVED</span>
+                <time datetime="2024-07">JUL 2024 &mdash; JAN 2025</time>
+                <span>Remote</span>
+              </div>
+              <div class="exp__body">
+                <div class="exp__title-row">
+                  <h3>AI/ML Intern</h3>
+                  <span class="exp__company">@ Phoenix Labs Global</span>
+                </div>
+                <ul class="exp__bullets">
+                  <li><strong>Talk2DB</strong> &mdash; pioneered a natural-language-to-SQL/Mongo agent with FastAPI, Mem0 schema memory, and OpenAI, producing validated queries across PostgreSQL, MySQL, and MongoDB.</li>
+                  <li><strong>Road inspection vision</strong> &mdash; engineered a dual-camera pipeline processing PAVE and ROW footage with pavement distress classification and Rut Depth / IRI rating evaluation.</li>
+                  <li><strong>50-camera facial recognition</strong> &mdash; designed a real-time biometric engine for 50 concurrent CCTV feeds using RetinaFace, ArcFace, and Qdrant, with &lt;5 ms queries across 1M+ faces.</li>
+                  <li><strong>API orchestration gateway</strong> &mdash; managed 13+ FastAPI ML microservices with RBAC and anomaly detection, reducing false positives by 37%.</li>
+                </ul>
+                <ul class="tags">
+                  <li>FastAPI</li><li>Mem0</li><li>RetinaFace</li><li>ArcFace</li><li>Qdrant</li><li>Django</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="exp" data-reveal>
+              <div class="exp__meta">
+                <span class="badge">ARCHIVED</span>
+                <time datetime="2024-01">JAN 2024 &mdash; JUN 2024</time>
+                <span>Remote</span>
+              </div>
+              <div class="exp__body">
+                <div class="exp__title-row">
+                  <h3>Machine Learning Intern</h3>
+                  <span class="exp__company">@ Atharvo India</span>
+                </div>
+                <ul class="exp__bullets">
+                  <li><strong>Churn prediction</strong> &mdash; trained XGBoost and Random Forest models to 91% accuracy, contributing to a 15% reduction in retention costs.</li>
+                  <li><strong>NLP ticket classification</strong> &mdash; built a TF-IDF and Logistic Regression pipeline that improved ticket routing efficiency by 30%.</li>
+                  <li><strong>Digit recognition</strong> &mdash; assembled an end-to-end LeNet-5 TensorFlow pipeline with preprocessing, validation, and accuracy benchmarking.</li>
+                </ul>
+                <ul class="tags">
+                  <li>XGBoost</li><li>Random Forest</li><li>TF-IDF</li><li>TensorFlow</li><li>Scikit-learn</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="container">
+          <header class="section-head" data-reveal>
+            <p class="section-kicker">04 // CASE FILES</p>
+            <h2 id="projects-title"><span class="prompt" aria-hidden="true">&gt;</span> ls ./projects</h2>
+            <p class="section-lede">Selected systems I&rsquo;ve designed, built, or shipped. Open a case file for the architecture, constraints, and outcomes.</p>
+          </header>
+
+          <div class="projects-toolbar" data-reveal>
+            <div class="filter-group" role="group" aria-label="Filter projects by discipline">
+              <button class="filter is-active" type="button" data-project-filter="all" aria-pressed="true">all <span>6</span></button>
+              <button class="filter" type="button" data-project-filter="genai" aria-pressed="false">genai <span>3</span></button>
+              <button class="filter" type="button" data-project-filter="vision" aria-pressed="false">vision <span>2</span></button>
+              <button class="filter" type="button" data-project-filter="speech" aria-pressed="false">speech <span>1</span></button>
+            </div>
+            <p class="filter-status" id="project-status" role="status" aria-live="polite">Showing 6 case files</p>
+          </div>
+
+          <div class="project-grid">
+            <article class="project project--featured" data-cat="genai" data-reveal>
+              <div class="project__visual project__visual--graphrag" aria-hidden="true">
+                <svg viewBox="0 0 640 420" preserveAspectRatio="xMidYMid slice" focusable="false">
+                  <defs>
+                    <radialGradient id="rag-glow" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#35e7ff" stop-opacity="0.35"/>
+                      <stop offset="100%" stop-color="#030806" stop-opacity="0"/>
+                    </radialGradient>
+                  </defs>
+                  <rect width="640" height="420" fill="#040e0a"/>
+                  <circle cx="320" cy="210" r="160" fill="url(#rag-glow)"/>
+                  <g class="graph-edges" stroke="rgba(0, 255, 156, 0.25)" stroke-width="1.5">
+                    <line x1="120" y1="110" x2="220" y2="180"/>
+                    <line x1="220" y1="180" x2="320" y2="140"/>
+                    <line x1="320" y1="140" x2="440" y2="110"/>
+                    <line x1="440" y1="110" x2="520" y2="190"/>
+                    <line x1="220" y1="180" x2="320" y2="280"/>
+                    <line x1="320" y1="280" x2="440" y2="250"/>
+                    <line x1="440" y1="250" x2="520" y2="190"/>
+                    <line x1="120" y1="260" x2="220" y2="180"/>
+                    <line x1="320" y1="140" x2="320" y2="280"/>
+                  </g>
+                  <g class="graph-nodes">
+                    <circle cx="120" cy="110" r="16" fill="#061a12" stroke="#00ff9c" stroke-width="2"/>
+                    <text x="120" y="114" fill="#7dffc9" font-size="9" text-anchor="middle" font-family="monospace">QUERY</text>
+                    <circle cx="220" cy="180" r="20" fill="#082218" stroke="#35e7ff" stroke-width="2"/>
+                    <text x="220" y="184" fill="#35e7ff" font-size="8.5" text-anchor="middle" font-family="monospace">HYBRID</text>
+                    <circle cx="320" cy="140" r="22" fill="#0d2b1f" stroke="#00ff9c" stroke-width="2.5"/>
+                    <text x="320" y="144" fill="#00ff9c" font-size="9" font-weight="bold" text-anchor="middle" font-family="monospace">NEO4J</text>
+                    <circle cx="320" cy="280" r="20" fill="#082218" stroke="#ffc857" stroke-width="2"/>
+                    <text x="320" y="284" fill="#ffc857" font-size="8" text-anchor="middle" font-family="monospace">CHROMA</text>
+                    <circle cx="440" cy="110" r="18" fill="#082218" stroke="#35e7ff" stroke-width="2"/>
+                    <text x="440" y="114" fill="#35e7ff" font-size="8" text-anchor="middle" font-family="monospace">RERANK</text>
+                    <circle cx="440" cy="250" r="18" fill="#082218" stroke="#ff4d8d" stroke-width="2"/>
+                    <text x="440" y="254" fill="#ff4d8d" font-size="8" text-anchor="middle" font-family="monospace">RAGAS</text>
+                    <circle cx="520" cy="190" r="24" fill="#061a12" stroke="#00ff9c" stroke-width="2.5"/>
+                    <text x="520" y="194" fill="#00ff9c" font-size="10" font-weight="bold" text-anchor="middle" font-family="monospace">OUTPUT</text>
+                  </g>
+                  <g fill="#9fe9c8" font-size="10" font-family="monospace">
+                    <text x="24" y="36">GRAPHRAG // ENTERPRISE PIPELINE</text>
+                    <text x="24" y="54" opacity="0.6">FASTAPI + NEO4J + CHROMADB + REDIS RQ</text>
+                    <text x="616" y="36" text-anchor="end" fill="#35e7ff">15,000+ QUERIES/DAY</text>
+                    <text x="616" y="54" text-anchor="end" fill="#00ff9c">RAGAS EVAL: 94.2%</text>
+                    <text x="24" y="396" fill="#ffc857">LATENCY: -35% (P95 &lt; 140ms)</text>
+                    <text x="616" y="396" text-anchor="end" fill="#ff4d8d">HALLUCINATION: -22%</text>
+                  </g>
+                </svg>
+                <span class="visual-tag visual-tag--tl">CASE_005</span>
+                <span class="visual-tag visual-tag--tr">PRODUCTION SCALE</span>
+                <span class="visual-tag visual-tag--bl">15K+ QPS // 1.2K USERS</span>
+                <span class="visual-tag visual-tag--br">EVALUATED W/ RAGAS</span>
+              </div>
+              <div class="project__body">
+                <div class="project__topline">
+                  <span>FILE_005 // SOFTEL SOLUTIONS</span>
+                  <span class="badge badge--live"><i aria-hidden="true"></i> FLAGSHIP</span>
+                </div>
+                <h3>Enterprise Hybrid RAG &amp; GraphRAG Platform</h3>
+                <p class="project__summary">High-throughput hybrid retrieval platform orchestrating dense vector search (ChromaDB), knowledge graph traversal (Neo4j), and cross-encoder reranking via FastAPI and Redis RQ workers. Rigorously benchmarked on a 400-query test set using Ragas, slashing hallucinations by 22% and retrieval latency by 35%.</p>
+                <ul class="project__metrics">
+                  <li><strong>15K+</strong><span>queries / day</span></li>
+                  <li><strong>1,200+</strong><span>active users</span></li>
+                  <li><strong>-22%</strong><span>hallucinations</span></li>
+                </ul>
+                <div class="project__actions">
+                  <button class="btn btn--primary" type="button" data-case="case-graphrag">open case file <svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg></button>
+                  <a class="btn btn--ghost" href="mailto:abhishekkumarnwd71@gmail.com?subject=GraphRAG%20Architecture%20Inquiry">inquire architecture <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg></a>
+                </div>
+                <ul class="tags">
+                  <li>FastAPI</li><li>Neo4j</li><li>ChromaDB</li><li>GraphRAG</li><li>Redis RQ</li><li>Ragas</li><li>LangChain</li><li>Docker</li>
+                </ul>
+              </div>
+            </article>
+
+
+            <article class="project project--featured" data-cat="vision" data-reveal>
+              <div class="project__visual project__visual--road" aria-hidden="true">
+                <svg viewBox="0 0 640 420" preserveAspectRatio="xMidYMid slice" focusable="false">
+                  <defs>
+                    <linearGradient id="road-sky" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#04110c"/>
+                      <stop offset="1" stop-color="#071a12"/>
+                    </linearGradient>
+                    <linearGradient id="road-surface" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#0b2318"/>
+                      <stop offset="1" stop-color="#07150e"/>
+                    </linearGradient>
+                    <linearGradient id="scan-fade" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0" stop-color="#00ff9c" stop-opacity="0"/>
+                      <stop offset=".5" stop-color="#00ff9c" stop-opacity=".9"/>
+                      <stop offset="1" stop-color="#00ff9c" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="640" height="420" fill="url(#road-sky)"/>
+                  <g class="road-grid">
+                    <path d="M0 300h640M0 340h640M0 385h640M90 420 240 130M210 420 285 130M430 420 355 130M550 420 400 130"/>
+                    <path d="M0 260h640" opacity=".4"/>
+                  </g>
+                  <polygon points="180,420 460,420 352,150 288,150" fill="url(#road-surface)" stroke="#1a5c3e" stroke-width="1.5"/>
+                  <g class="road-lanes" fill="none" stroke="#b8ffdc" stroke-width="3" stroke-linecap="round">
+                    <path d="M320 150v30" stroke-dasharray="14 16"/>
+                    <path d="M318 202v36" stroke-dasharray="18 20"/>
+                    <path d="M316 270v52" stroke-dasharray="22 26"/>
+                    <path d="M310 358v40" stroke-dasharray="26 30"/>
+                    <path d="M202 420 300 150M438 420 340 150" stroke="#2d7d58" stroke-width="2"/>
+                  </g>
+                  <g class="road-boxes" fill="none" stroke-width="1.5">
+                    <g stroke="#ff4d8d">
+                      <rect x="292" y="300" width="62" height="34" rx="2"/>
+                      <path d="M292 310h-8M292 324h-8M354 310h8M354 324h8M302 300v-8M344 300v-8M302 334v8M344 334v8"/>
+                      <text x="292" y="292" fill="#ff8ab4" stroke="none">POTHOLE 0.94</text>
+                    </g>
+                    <g stroke="#35e7ff">
+                      <rect x="407" y="202" width="26" height="42" rx="2"/>
+                      <text x="407" y="194" fill="#8bf3ff" stroke="none">SIGN 0.91</text>
+                    </g>
+                    <g stroke="#ffc857">
+                      <path d="M238 262 254 276 268 260 282 274"/>
+                      <text x="226" y="254" fill="#ffe29a" stroke="none">CRACK 0.88</text>
+                    </g>
+                  </g>
+                  <rect class="road-scanline" x="0" y="0" width="640" height="2" fill="url(#scan-fade)"/>
+                  <g class="road-hud">
+                    <text x="24" y="40">ROADVISION-AI // NSV SURVEY</text>
+                    <text x="24" y="60" opacity=".6">PAVE + ROW CAMERA FUSION</text>
+                    <text x="616" y="40" text-anchor="end">FRAME 004821</text>
+                    <text x="616" y="60" text-anchor="end" opacity=".6">MODE: ANALYZE</text>
+                  </g>
+                  <g class="road-health">
+                    <text x="24" y="392">ROAD HEALTH</text>
+                    <rect x="112" y="380" width="110" height="6" rx="3" fill="#123524"/>
+                    <rect x="112" y="380" width="70" height="6" rx="3" fill="#ffc857"/>
+                    <text x="234" y="392" fill="#ffe29a">68 / FAIR</text>
+                  </g>
+                </svg>
+                <span class="visual-tag visual-tag--tl">CASE_001</span>
+                <span class="visual-tag visual-tag--tr">OPEN SOURCE</span>
+                <span class="visual-tag visual-tag--bl">6 MODELS // PARALLEL</span>
+                <span class="visual-tag visual-tag--br">5 EXPORT FORMATS</span>
+              </div>
+              <div class="project__body">
+                <div class="project__topline">
+                  <span>FILE_001 // PERSONAL PROJECT</span>
+                  <span class="badge badge--live"><i aria-hidden="true"></i> FEATURED</span>
+                </div>
+                <h3>RoadVision-AI</h3>
+                <p class="project__summary">AI-powered road survey analysis for NSV footage. A parallel YOLOv8 ensemble detects pavement defects and 30+ road assets from PAVE and ROW cameras, then turns the results into RIS-compliant reports, maps, and heatmaps.</p>
+                <ul class="project__metrics">
+                  <li><strong>6</strong><span>models in parallel</span></li>
+                  <li><strong>30+</strong><span>road features</span></li>
+                  <li><strong>5</strong><span>export formats</span></li>
+                </ul>
+                <div class="project__actions">
+                  <button class="btn btn--primary" type="button" data-case="case-roadvision">open case file <svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg></button>
+                  <a class="btn btn--ghost" href="https://github.com/abhish12345/RoadVision-AI" target="_blank" rel="noopener noreferrer">github <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+                </div>
+                <ul class="tags">
+                  <li>Python</li><li>FastAPI</li><li>Celery</li><li>React</li><li>YOLOv8</li><li>MongoDB</li><li>Redis</li><li>Leaflet</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project" data-cat="genai" data-reveal>
+              <div class="project__visual project__visual--aml" aria-hidden="true">
+                <svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" focusable="false">
+                  <defs>
+                    <radialGradient id="aml-glow" cx="50%" cy="50%" r="50%">
+                      <stop offset="0" stop-color="#ff4d8d" stop-opacity=".32"/>
+                      <stop offset="1" stop-color="#ff4d8d" stop-opacity="0"/>
+                    </radialGradient>
+                  </defs>
+                  <rect width="480" height="300" fill="#08110d"/>
+                  <g class="net-lines" stroke="#1f5d40" stroke-width="1">
+                    <path d="M240 150 84 70M240 150 392 66M240 150 72 226M240 150 410 226M240 150 240 44M240 150 240 260M84 70 240 44M392 66 240 44M72 226 240 260M410 226 240 260"/>
+                    <path d="M84 70 72 226M392 66 410 226" stroke-dasharray="4 8" opacity=".5"/>
+                  </g>
+                  <circle cx="240" cy="150" r="112" fill="url(#aml-glow)"/>
+                  <g class="net-nodes" fill="#071a12" stroke="#00ff9c" stroke-width="1.5">
+                    <circle cx="84" cy="70" r="13"/><circle cx="392" cy="66" r="13"/><circle cx="72" cy="226" r="13"/><circle cx="410" cy="226" r="13"/><circle cx="240" cy="44" r="13"/><circle cx="240" cy="260" r="13"/>
+                  </g>
+                  <g class="net-labels" fill="#9fe9c8" font-size="10">
+                    <text x="84" y="49" text-anchor="middle">PEP</text>
+                    <text x="392" y="45" text-anchor="middle">SAN</text>
+                    <text x="72" y="253" text-anchor="middle">NEWS</text>
+                    <text x="410" y="253" text-anchor="middle">KYB</text>
+                    <text x="240" y="23" text-anchor="middle">30K+</text>
+                    <text x="240" y="282" text-anchor="middle">200+</text>
+                  </g>
+                  <circle class="net-core" cx="240" cy="150" r="46" fill="#120910" stroke="#ff4d8d" stroke-width="1.5"/>
+                  <text x="240" y="143" text-anchor="middle" fill="#ff8ab4" font-size="9" letter-spacing="2">RISK</text>
+                  <text class="net-score" x="240" y="170" text-anchor="middle" fill="#ffd0e0" font-size="28" font-weight="700">87</text>
+                  <rect class="visual-scanline" x="0" y="0" width="480" height="2" fill="#ff4d8d" opacity=".35"/>
+                  <g fill="#6f9a86" font-size="9">
+                    <text x="20" y="28">AML // ENTITY GRAPH</text>
+                    <text x="460" y="28" text-anchor="end">LIVE FEEDS</text>
+                  </g>
+                </svg>
+                <span class="visual-tag visual-tag--tl">CASE_002</span>
+                <span class="visual-tag visual-tag--br">RISK 0&ndash;100</span>
+              </div>
+              <div class="project__body">
+                <div class="project__topline"><span>FILE_002 // INDUSTRY</span><span class="project__cat">GENAI / NLP</span></div>
+                <h3>AML Risk Intelligence</h3>
+                <p class="project__summary">Automated adverse-media and entity-risk platform screening 30K+ entities against 200+ OpenSanctions datasets and live news, with weighted risk scoring and DistilBERT / SVM classification.</p>
+                <ul class="project__metrics">
+                  <li><strong>30K+</strong><span>entities</span></li>
+                  <li><strong>+28%</strong><span>high-risk detection</span></li>
+                  <li><strong>-65%</strong><span>manual effort</span></li>
+                </ul>
+                <div class="project__actions">
+                  <button class="btn btn--ghost" type="button" data-case="case-aml">open case file <svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg></button>
+                </div>
+                <ul class="tags">
+                  <li>DistilBERT</li><li>SVM</li><li>FastAPI</li><li>MongoDB</li><li>Selenium</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project" data-cat="genai" data-reveal>
+              <div class="project__visual project__visual--talk2db" aria-hidden="true">
+                <svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" focusable="false">
+                  <rect width="480" height="300" fill="#040b08"/>
+                  <g stroke="#00ff9c" stroke-width="1.5" fill="#071b13">
+                    <ellipse cx="100" cy="130" rx="36" ry="12"/>
+                    <path d="M64 130v36c0 6.6 16.1 12 36 12s36-5.4 36-12v-36"/>
+                    <path d="M64 148c0 6.6 16.1 12 36 12s36-5.4 36-12"/>
+                    <text x="100" y="153" fill="#7dffc9" font-size="9" text-anchor="middle" font-family="monospace">POSTGRES</text>
+
+                    <ellipse cx="380" cy="130" rx="36" ry="12"/>
+                    <path d="M344 130v36c0 6.6 16.1 12 36 12s36-5.4 36-12v-36"/>
+                    <path d="M344 148c0 6.6 16.1 12 36 12s36-5.4 36-12"/>
+                    <text x="380" y="153" fill="#35e7ff" font-size="9" text-anchor="middle" font-family="monospace">MONGODB</text>
+                  </g>
+                  <circle cx="240" cy="148" r="44" fill="#0a251a" stroke="#ffc857" stroke-width="2"/>
+                  <text x="240" y="142" fill="#ffe29a" font-size="10" font-weight="bold" text-anchor="middle" font-family="monospace">MEM0 AGENT</text>
+                  <text x="240" y="160" fill="#ffc857" font-size="8" text-anchor="middle" font-family="monospace">SCHEMA MEMORY</text>
+                  <path d="M136 148h60M284 148h60" stroke="#00ff9c" stroke-width="2" stroke-dasharray="4 4"/>
+                  <g fill="#9fe9c8" font-size="9" font-family="monospace">
+                    <text x="20" y="28">TALK2DB // NATURAL LANGUAGE AGENT</text>
+                    <text x="460" y="28" text-anchor="end" fill="#35e7ff">3 DB ENGINES</text>
+                    <text x="20" y="282" fill="#7dffc9">SYNTAX VALIDATED // ZERO HALLUCINATION</text>
+                    <text x="460" y="282" text-anchor="end" fill="#ffc857">&lt;180ms GENERATION</text>
+                  </g>
+                </svg>
+                <span class="visual-tag visual-tag--tl">CASE_006</span>
+                <span class="visual-tag visual-tag--br">SQL + NOSQL</span>
+              </div>
+              <div class="project__body">
+                <div class="project__topline"><span>FILE_006 // PHOENIX LABS</span><span class="project__cat">AGENTIC AI</span></div>
+                <h3>Talk2DB: Autonomous NL-to-Query Agent</h3>
+                <p class="project__summary">Autonomous database querying engine using FastAPI, Mem0 schema memory, and LLMs. Converts ambiguous natural language questions into rigorously validated SQL and MongoDB aggregation queries across PostgreSQL, MySQL, and MongoDB.</p>
+                <ul class="project__metrics">
+                  <li><strong>3</strong><span>DB engines</span></li>
+                  <li><strong>100%</strong><span>syntax validated</span></li>
+                  <li><strong>&lt;180ms</strong><span>generation</span></li>
+                </ul>
+                <div class="project__actions">
+                  <button class="btn btn--ghost" type="button" data-case="case-talk2db">open case file <svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg></button>
+                </div>
+                <ul class="tags">
+                  <li>FastAPI</li><li>Mem0</li><li>LangChain</li><li>OpenAI</li><li>PostgreSQL</li><li>MongoDB</li><li>Python</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project" data-cat="speech" data-reveal>
+              <div class="project__visual project__visual--voice" aria-hidden="true">
+                <svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" focusable="false">
+                  <defs>
+                    <radialGradient id="voice-glow" cx="50%" cy="50%" r="50%">
+                      <stop offset="0" stop-color="#35e7ff" stop-opacity=".25"/>
+                      <stop offset="1" stop-color="#35e7ff" stop-opacity="0"/>
+                    </radialGradient>
+                  </defs>
+                  <rect width="480" height="300" fill="#07110f"/>
+                  <circle cx="240" cy="134" r="126" fill="url(#voice-glow)"/>
+                  <g class="voice-rings" fill="none" stroke="#35e7ff">
+                    <circle cx="240" cy="134" r="92" opacity=".18" stroke-dasharray="3 9"/>
+                    <circle cx="240" cy="134" r="70" opacity=".28"/>
+                    <circle cx="240" cy="134" r="48" opacity=".45" stroke-dasharray="6 6"/>
+                  </g>
+                  <circle cx="240" cy="134" r="30" fill="#061a18" stroke="#8bf3ff" stroke-width="1.5"/>
+                  <path d="M232 122v24M240 114v40M248 124v20" stroke="#8bf3ff" stroke-width="3" stroke-linecap="round"/>
+                  <text x="240" y="197" text-anchor="middle" fill="#8bf3ff" font-size="10" letter-spacing="2">VOICE_ID // 94%</text>
+                  <polyline class="voice-wave" points="24,240 40,240 48,226 56,252 64,218 72,260 80,234 88,246 96,212 104,258 112,228 120,242 128,220 136,254 144,236 152,244 160,208 168,262 176,226 184,248 192,216 200,256 208,232 216,244 224,222 232,252 240,238 248,246 256,214 264,258 272,230 280,242 288,220 296,254 304,236 312,244 320,210 328,260 336,228 344,248 352,218 360,256 368,234 376,246 384,224 392,252 400,238 408,244 416,220 424,254 432,234 440,246 448,228 456,240 464,240" fill="none" stroke="#00ff9c" stroke-width="1.5" stroke-linejoin="round"/>
+                  <rect class="visual-scanline" x="0" y="0" width="480" height="2" fill="#35e7ff" opacity=".4"/>
+                  <g fill="#6f9a86" font-size="9">
+                    <text x="20" y="28">SPEAKER // BIOMETRIC MATCH</text>
+                    <text x="460" y="28" text-anchor="end">250+ ENROLLED</text>
+                  </g>
+                  <g fill="#9fe9c8" font-size="9">
+                    <text x="20" y="286">ECAPA-TDNN</text>
+                    <text x="460" y="286" text-anchor="end">CHROMADB</text>
+                  </g>
+                </svg>
+                <span class="visual-tag visual-tag--tl">CASE_003</span>
+                <span class="visual-tag visual-tag--br">REAL-TIME</span>
+              </div>
+              <div class="project__body">
+                <div class="project__topline"><span>FILE_003 // INDUSTRY</span><span class="project__cat">SPEECH</span></div>
+                <h3>Real-Time Speaker ID</h3>
+                <p class="project__summary">Stateful voice-biometric service that extracts ECAPA-TDNN embeddings on the fly and matches them against ChromaDB &mdash; 94% accuracy across 250+ enrolled users.</p>
+                <ul class="project__metrics">
+                  <li><strong>94%</strong><span>accuracy</span></li>
+                  <li><strong>250+</strong><span>speakers</span></li>
+                  <li><strong>RT</strong><span>matching</span></li>
+                </ul>
+                <div class="project__actions">
+                  <button class="btn btn--ghost" type="button" data-case="case-speaker">open case file <svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg></button>
+                </div>
+                <ul class="tags">
+                  <li>PyTorch</li><li>ECAPA-TDNN</li><li>Wav2Vec2</li><li>ChromaDB</li><li>FastAPI</li><li>Docker</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project project--wide" data-cat="vision" data-reveal>
+              <div class="project__visual project__visual--doc" aria-hidden="true">
+                <svg viewBox="0 0 480 300" preserveAspectRatio="xMidYMid slice" focusable="false">
+                  <rect width="480" height="300" fill="#08110e"/>
+                  <g class="doc-grid" stroke="#153c2c" stroke-width="1">
+                    <path d="M0 60h480M0 120h480M0 180h480M0 240h480M60 0v300M120 0v300M180 0v300M240 0v300M300 0v300M360 0v300M420 0v300"/>
+                  </g>
+                  <g transform="rotate(-4 240 150)">
+                    <rect x="144" y="38" width="192" height="224" rx="8" fill="#0b1c15" stroke="#2b7a55"/>
+                    <rect x="160" y="54" width="160" height="76" rx="4" fill="#07130e" stroke="#1d523a"/>
+                    <circle cx="184" cy="82" r="13" fill="#123524" stroke="#35e7ff" opacity=".7"/>
+                    <path d="M165 118c5-10 14-14 22-14s17 4 22 14" fill="none" stroke="#35e7ff" opacity=".7"/>
+                    <g fill="#1d523a">
+                      <rect x="212" y="64" width="88" height="4" rx="2"/><rect x="212" y="76" width="70" height="4" rx="2"/><rect x="212" y="88" width="80" height="4" rx="2"/><rect x="212" y="100" width="54" height="4" rx="2"/><rect x="212" y="112" width="66" height="4" rx="2"/>
+                    </g>
+                    <g fill="#2b7a55">
+                      <rect x="160" y="148" width="66" height="4" rx="2"/><rect x="160" y="160" width="120" height="4" rx="2"/><rect x="160" y="172" width="96" height="4" rx="2"/><rect x="160" y="184" width="132" height="4" rx="2"/>
+                    </g>
+                    <g class="barcode" fill="#9fe9c8">
+                      <rect x="160" y="214" width="3" height="26"/><rect x="166" y="214" width="2" height="26"/><rect x="171" y="214" width="5" height="26"/><rect x="179" y="214" width="2" height="26"/><rect x="184" y="214" width="4" height="26"/><rect x="191" y="214" width="2" height="26"/><rect x="196" y="214" width="6" height="26"/><rect x="205" y="214" width="3" height="26"/><rect x="211" y="214" width="2" height="26"/><rect x="216" y="214" width="5" height="26"/><rect x="224" y="214" width="2" height="26"/><rect x="229" y="214" width="4" height="26"/><rect x="236" y="214" width="2" height="26"/><rect x="241" y="214" width="5" height="26"/><rect x="249" y="214" width="3" height="26"/>
+                    </g>
+                    <rect x="152" y="202" width="176" height="48" rx="3" fill="none" stroke="#ffc857" stroke-width="1.5"/>
+                    <text x="152" y="196" fill="#ffe29a" font-size="9">PDF417 // 0.97</text>
+                  </g>
+                  <rect class="visual-scanline" x="0" y="0" width="480" height="2" fill="#ffc857" opacity=".3"/>
+                  <g fill="#6f9a86" font-size="9">
+                    <text x="20" y="28">DOCUMENT // FIELD EXTRACTION</text>
+                    <text x="460" y="28" text-anchor="end">MULTI-COUNTRY</text>
+                  </g>
+                  <g fill="#9fe9c8" font-size="9">
+                    <text x="20" y="286">YOLOv11 + OCR FALLBACK</text>
+                    <text x="460" y="286" text-anchor="end">95%+</text>
+                  </g>
+                </svg>
+                <span class="visual-tag visual-tag--tl">CASE_004</span>
+                <span class="visual-tag visual-tag--br">30% DEGRADATION</span>
+              </div>
+              <div class="project__body">
+                <div class="project__topline"><span>FILE_004 // INDUSTRY</span><span class="project__cat">VISION</span></div>
+                <h3>Document Intelligence</h3>
+                <p class="project__summary">Multi-country ID scanner using YOLOv11, PDF417 barcode decoding, and OCR fallback &mdash; 95%+ field accuracy under 30% image degradation from blur, rotation, or skew.</p>
+                <ul class="project__metrics">
+                  <li><strong>95%+</strong><span>field accuracy</span></li>
+                  <li><strong>30%</strong><span>degradation</span></li>
+                  <li><strong>1</strong><span>API pipeline</span></li>
+                </ul>
+                <div class="project__actions">
+                  <button class="btn btn--ghost" type="button" data-case="case-document">open case file <svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg></button>
+                </div>
+                <ul class="tags">
+                  <li>YOLOv11</li><li>OpenCV</li><li>PaddleOCR</li><li>Tesseract</li><li>FastAPI</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="projects-cta" data-reveal role="group" aria-label="Open source project">
+            <div class="projects-cta__icon" aria-hidden="true"><svg class="icon"><use href="#i-spark"></use></svg></div>
+            <div class="projects-cta__copy">
+              <p class="mini-kicker">// OPEN SOURCE</p>
+              <h3>Multi-Agent LLM Orchestration</h3>
+              <p>A containerized multi-agent architecture with dynamic LLM routing, self-improving evaluation loops, and real-time SSE streaming.</p>
+            </div>
+            <a class="btn btn--ghost" href="https://github.com/abhish12345/Multi_Agent_System" target="_blank" rel="noopener noreferrer">view on github <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+          </div>
+
+          <noscript>
+            <p class="noscript-note">JavaScript is disabled, so the case-file dialogs and command palette are unavailable. The summaries above are complete; email <a href="mailto:abhishekkumarnwd71@gmail.com">abhishekkumarnwd71@gmail.com</a> for a full walkthrough.</p>
+          </noscript>
+        </div>
+      </section>
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <header class="section-head" data-reveal>
+            <p class="section-kicker">04 // OPEN CHANNEL</p>
+            <h2 id="contact-title"><span class="prompt" aria-hidden="true">&gt;</span> ./connect --now</h2>
+            <p class="section-lede">Hiring for an AI/ML role, need a second pair of eyes on a hard system, or just want to compare notes? The channel is open.</p>
+          </header>
+
+          <div class="contact-grid">
+            <div class="panel contact-card" data-reveal>
+              <div class="panel-bar">
+                <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>~/contact/links.sh</span>
+                <span class="panel-bar__tag">ONLINE</span>
+              </div>
+              <div class="contact-rows">
+                <div class="contact-row">
+                  <span class="contact-row__label">email</span>
+                  <a href="mailto:abhishekkumarnwd71@gmail.com">abhishekkumarnwd71@gmail.com</a>
+                  <button class="icon-btn" type="button" data-copy-email aria-label="Copy email address to clipboard" title="Copy email">
+                    <svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg>
+                  </button>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-row__label">phone</span>
+                  <a href="tel:+919431853882">+91&nbsp;94318&nbsp;53882</a>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-row__label">location</span>
+                  <span>Noida, India &mdash; open to remote</span>
+                </div>
+                <div class="contact-row">
+                  <span class="contact-row__label">status</span>
+                  <span class="contact-row__live"><i aria-hidden="true"></i> Available for AI/ML roles</span>
+                </div>
+              </div>
+
+              <div class="contact-socials" role="group" aria-label="Social profiles">
+                <a href="https://github.com/abhish12345" target="_blank" rel="noopener noreferrer"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-github"></use></svg> github <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://www.linkedin.com/in/abhishek-kumar-a26b3522a/" target="_blank" rel="noopener noreferrer"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-linkedin"></use></svg> linkedin <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://www.instagram.com/abh.shek_pandey/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg> instagram <span aria-hidden="true">&#8599;</span></a>
+              </div>
+
+              <div class="contact-terminal" aria-hidden="true">
+                <p><span>$</span> contact --preferred</p>
+                <p class="contact-terminal__out">email &gt; linkedin &gt; phone</p>
+                <p><span>$</span> response_time</p>
+                <p class="contact-terminal__out">usually within 24 hours</p>
+              </div>
+            </div>
+
+            <div class="panel form-panel" data-reveal>
+              <div class="panel-bar">
+                <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span>~/contact/new_message.sh</span>
+                <span class="panel-bar__tag">ENCRYPTED</span>
+              </div>
+              <form id="contact-form" name="submit-to-google-sheet" aria-describedby="form-note">
+                <div class="field">
+                  <label for="name">name</label>
+                  <div class="field__control"><span aria-hidden="true">&gt;</span><input id="name" type="text" name="Name" placeholder="your name" autocomplete="name" maxlength="100" required></div>
+                </div>
+                <div class="field">
+                  <label for="email">email</label>
+                  <div class="field__control"><span aria-hidden="true">&gt;</span><input id="email" type="email" name="Email" placeholder="you@company.com" autocomplete="email" maxlength="150" required></div>
+                </div>
+                <div class="field">
+                  <label for="message">message</label>
+                  <div class="field__control field__control--area"><span aria-hidden="true">&gt;</span><textarea id="message" name="Message" rows="5" placeholder="role, project, or idea…" maxlength="2000" required></textarea></div>
+                </div>
+                <div class="hp-field" aria-hidden="true">
+                  <label for="website">Leave this field empty</label>
+                  <input id="website" type="text" name="Website" tabindex="-1" autocomplete="off">
+                </div>
+                <p class="form-note" id="form-note">Delivered to my inbox through Google Apps Script. No data is stored on this site.</p>
+                <noscript>
+                  <p class="form-note form-note--warning">JavaScript is disabled, so this form cannot send. Email <a href="mailto:abhishekkumarnwd71@gmail.com">abhishekkumarnwd71@gmail.com</a> directly.</p>
+                </noscript>
+                <button class="btn btn--primary btn--full" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-send"></use></svg> transmit message</button>
+              </form>
+              <p id="msg" class="form-status" role="status" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a class="brand" href="#home" aria-label="Abhishek Kumar — back to top">
+              <span class="brand__mark" aria-hidden="true">[AK]</span>
+              <span class="brand__text"><span class="brand__prompt">~/</span>abhishek<span class="brand__cursor" aria-hidden="true">_</span></span>
+            </a>
+            <p>AI/ML engineer building systems that see, hear, and reason. Currently in Noida, working wherever the problem is.</p>
+          </div>
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="#about">about</a>
+            <a href="#terminal">terminal</a>
+            <a href="#experience">experience</a>
+            <a href="#projects">projects</a>
+            <a href="#contact">contact</a>
+            <a href="index.html">recruiter mode</a>
+          </nav>
+          <div class="footer-controls" role="group" aria-label="Display controls">
+            <button class="fx-toggle" type="button" data-toggle="matrix" aria-pressed="false"><span class="fx-toggle__led" aria-hidden="true"></span>matrix: off</button>
+            <button class="fx-toggle" type="button" data-toggle="crt" aria-pressed="true"><span class="fx-toggle__led" aria-hidden="true"></span>crt: on</button>
+            <button class="fx-toggle" type="button" data-open-palette><svg class="icon" aria-hidden="true"><use href="#i-command"></use></svg> command palette</button>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="year">2026</span> Abhishek Kumar. Built from scratch with semantic HTML, CSS &amp; vanilla JavaScript.</p>
+          <p class="footer-bottom__right"><span class="status-dot" aria-hidden="true"></span> SYS: OPERATIONAL <span class="sep">/</span> <span id="footer-clock">--:--</span> IST <a class="to-top" href="#top" aria-label="Back to top">top <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></a></p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <dialog class="command-dialog" id="command-palette" aria-labelledby="palette-title">
+      <div class="command-dialog__inner">
+        <h2 class="sr-only" id="palette-title">Command palette</h2>
+        <div class="command-dialog__head">
+          <span class="command-dialog__prompt" aria-hidden="true">&gt;</span>
+          <label class="sr-only" for="palette-search">Search commands</label>
+          <input id="palette-search" type="text" placeholder="type a command or section…" autocomplete="off" spellcheck="false" aria-controls="palette-list" aria-describedby="palette-help">
+          <kbd>esc</kbd>
+        </div>
+        <div class="command-dialog__meta"><span>COMMAND PALETTE</span><span id="palette-count">22 commands</span></div>
+        <ul class="palette-list" id="palette-list">
+          <li><button class="palette-item" type="button" data-action="nav" data-target="#home" data-search="home hero top start"><svg class="icon" aria-hidden="true"><use href="#i-terminal"></use></svg><span class="palette-item__label">go home</span><span class="palette-item__hint">00</span></button></li>
+          <li><button class="palette-item" type="button" data-action="nav" data-target="#about" data-search="about profile whoami skills stack education"><svg class="icon" aria-hidden="true"><use href="#i-cpu"></use></svg><span class="palette-item__label">about / capability matrix</span><span class="palette-item__hint">01</span></button></li>
+          <li><button class="palette-item" type="button" data-action="nav" data-target="#experience" data-search="experience work career jobs timeline"><svg class="icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="palette-item__label">experience log</span><span class="palette-item__hint">02</span></button></li>
+          <li><button class="palette-item" type="button" data-action="nav" data-target="#projects" data-search="projects case files work portfolio"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg><span class="palette-item__label">project case files</span><span class="palette-item__hint">03</span></button></li>
+          <li><button class="palette-item" type="button" data-action="nav" data-target="#contact" data-search="contact email hire connect message"><svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg><span class="palette-item__label">open channel / contact</span><span class="palette-item__hint">04</span></button></li>
+                    <li><button class="palette-item" type="button" data-action="nav" data-target="#terminal" data-search="terminal cli repl bash interactive command prompt"><svg class="icon" aria-hidden="true"><use href="#i-terminal"></use></svg><span class="palette-item__label">interactive terminal (REPL)</span><span class="palette-item__hint">02</span></button></li>
+          <li><button class="palette-item" type="button" data-action="case" data-target="#case-graphrag" data-search="graphrag rag hybrid retrieval neo4j chromadb softel"><svg class="icon" aria-hidden="true"><use href="#i-cpu"></use></svg><span class="palette-item__label">case file: Hybrid RAG &amp; GraphRAG</span><span class="palette-item__hint">005</span></button></li>
+          <li><button class="palette-item" type="button" data-action="case" data-target="#case-talk2db" data-search="talk2db sql mongo agent mem0 phoenix"><svg class="icon" aria-hidden="true"><use href="#i-terminal"></use></svg><span class="palette-item__label">case file: Talk2DB Agent</span><span class="palette-item__hint">006</span></button></li>
+          <li><button class="palette-item" type="button" data-action="audio" data-search="audio sound fx mechanical clicks toggle"><svg class="icon" aria-hidden="true"><use href="#i-mic"></use></svg><span class="palette-item__label">toggle mechanical audio FX</span><span class="palette-item__hint">FX</span></button></li>
+          <li><button class="palette-item" type="button" data-action="case" data-target="#case-roadvision" data-search="roadvision road vision yolo case file"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="palette-item__label">case file: RoadVision-AI</span><span class="palette-item__hint">001</span></button></li>
+          <li><button class="palette-item" type="button" data-action="case" data-target="#case-aml" data-search="aml risk sanctions compliance case file"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg><span class="palette-item__label">case file: AML Risk Intelligence</span><span class="palette-item__hint">002</span></button></li>
+          <li><button class="palette-item" type="button" data-action="case" data-target="#case-speaker" data-search="speaker voice audio speech case file"><svg class="icon" aria-hidden="true"><use href="#i-mic"></use></svg><span class="palette-item__label">case file: Real-Time Speaker ID</span><span class="palette-item__hint">003</span></button></li>
+          <li><button class="palette-item" type="button" data-action="case" data-target="#case-document" data-search="document ocr vision barcode case file"><svg class="icon" aria-hidden="true"><use href="#i-file"></use></svg><span class="palette-item__label">case file: Document Intelligence</span><span class="palette-item__hint">004</span></button></li>
+          <li><button class="palette-item" type="button" data-action="cv" data-search="download cv resume dossier pdf"><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg><span class="palette-item__label">download CV / dossier</span><span class="palette-item__hint">PDF</span></button></li>
+          <li><button class="palette-item" type="button" data-action="copy-email" data-search="copy email clipboard address"><svg class="icon" aria-hidden="true"><use href="#i-copy"></use></svg><span class="palette-item__label">copy email address</span><span class="palette-item__hint">CLIP</span></button></li>
+          <li><button class="palette-item" type="button" data-action="email" data-search="email mail contact message"><svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg><span class="palette-item__label">compose an email</span><span class="palette-item__hint">MAIL</span></button></li>
+          <li><button class="palette-item" type="button" data-action="github" data-search="github code repositories open source"><svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg><span class="palette-item__label">open GitHub profile</span><span class="palette-item__hint">EXT</span></button></li>
+          <li><button class="palette-item" type="button" data-action="linkedin" data-search="linkedin profile network"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg><span class="palette-item__label">open LinkedIn profile</span><span class="palette-item__hint">EXT</span></button></li>
+          <li><button class="palette-item" type="button" data-action="matrix" data-search="matrix rain effect toggle visual"><svg class="icon" aria-hidden="true"><use href="#i-terminal"></use></svg><span class="palette-item__label">toggle matrix rain</span><span class="palette-item__hint">FX</span></button></li>
+          <li><button class="palette-item" type="button" data-action="crt" data-search="crt scanlines effect toggle visual"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span class="palette-item__label">toggle CRT overlay</span><span class="palette-item__hint">FX</span></button></li>
+          <li><button class="palette-item" type="button" data-action="recruiter" data-search="recruiter mode clean portfolio simple"><svg class="icon" aria-hidden="true"><use href="#i-globe"></use></svg><span class="palette-item__label">switch to Recruiter Mode</span><span class="palette-item__hint">UI</span></button></li>
+          <li><button class="palette-item" type="button" data-action="top" data-search="top back scroll up"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg><span class="palette-item__label">back to top</span><span class="palette-item__hint">HOME</span></button></li>
+        </ul>
+        <p class="palette-empty" id="palette-empty" hidden>no matching command. try &ldquo;projects&rdquo;, &ldquo;cv&rdquo;, or &ldquo;email&rdquo;.</p>
+        <div class="command-dialog__foot" id="palette-help"><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navigate</span><span><kbd>&crarr;</kbd> select</span><span><kbd>esc</kbd> close</span></div>
+      </div>
+    </dialog>
+
+    <dialog class="case-dialog" id="case-graphrag" aria-labelledby="case-graphrag-title">
+      <div class="case-dialog__inner">
+        <div class="case-dialog__head">
+          <div>
+            <p class="mini-kicker">CASE FILE // 005 &middot; SOFTEL SOLUTIONS</p>
+            <h2 id="case-graphrag-title">Enterprise Hybrid RAG &amp; GraphRAG Platform</h2>
+            <p class="case-dialog__sub">High-scale retrieval orchestration serving 15,000+ daily queries for 1,200+ users.</p>
+          </div>
+          <button class="dialog-close" type="button" data-close-dialog aria-label="Close GraphRAG case file"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+        </div>
+        <dl class="case-meta">
+          <div><dt>Role</dt><dd>Python Developer (AI/ML)</dd></div>
+          <div><dt>Scale</dt><dd>15K+ QPS &middot; 1,200+ Users</dd></div>
+          <div><dt>Verification</dt><dd>400-query test set (Ragas)</dd></div>
+          <div><dt>Impact</dt><dd>-22% Hallucinations &middot; -35% Latency</dd></div>
+        </dl>
+        <div class="case-dialog__body">
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> the challenge</h3>
+            <p>Standard dense vector search suffered from context fragmentation when queries required multi-hop entity reasoning across disparate corporate documents. This resulted in factual hallucinations in 28% of complex enterprise queries and unacceptably high retrieval latency under concurrent user load.</p>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> architecture &amp; pipeline</h3>
+            <div class="arch-diagram">
+              <div class="arch-flow">
+                <span class="arch-node">User Query</span>
+                <span class="arch-arrow">&rarr;</span>
+                <span class="arch-node arch-node--cyan">Hybrid Retriever (BM25 + ChromaDB)</span>
+                <span class="arch-arrow">&rarr;</span>
+                <span class="arch-node arch-node--amber">Neo4j Cypher Traversal</span>
+                <span class="arch-arrow">&rarr;</span>
+                <span class="arch-node arch-node--cyan">Cross-Encoder Reranker</span>
+                <span class="arch-arrow">&rarr;</span>
+                <span class="arch-node">LLM Context Stream</span>
+              </div>
+            </div>
+            <ul class="case-list">
+              <li><strong>Hybrid Retrieval Fusion:</strong> Unified dense semantic search (ChromaDB cosine similarity) with sparse keyword matching (BM25) to catch specific entity IDs and domain keywords.</li>
+              <li><strong>Knowledge Graph Linking:</strong> Extracted entity-relationship triples into Neo4j, enabling multi-hop graph traversals that surface hidden contextual dependencies.</li>
+              <li><strong>Async Queueing &amp; Workers:</strong> Containerized FastAPI microservices paired with Redis RQ workers to handle high-throughput query spikes without blocking the API gateway.</li>
+              <li><strong>Cross-Encoder Reranking:</strong> Scored candidate contexts with a fine-tuned cross-encoder, trimming prompt tokens by 40% while preserving crucial evidence.</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> evaluation &amp; results</h3>
+            <ul class="case-metrics">
+              <li><strong>15K+</strong><span>daily queries handled smoothly</span></li>
+              <li><strong>1,200+</strong><span>enterprise users served</span></li>
+              <li><strong>-22%</strong><span>hallucination reduction via Ragas</span></li>
+              <li><strong>-35%</strong><span>query latency drop (P95 &lt; 140ms)</span></li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> stack</h3>
+            <ul class="tags"><li>FastAPI</li><li>Neo4j</li><li>ChromaDB</li><li>Redis RQ</li><li>Ragas</li><li>LangChain</li><li>Docker</li><li>Python 3.12</li></ul>
+          </div>
+        </div>
+        <div class="case-dialog__foot">
+          <a class="btn btn--primary" href="mailto:abhishekkumarnwd71@gmail.com?subject=Enterprise%20GraphRAG%20Discussion">discuss this architecture <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg></a>
+          <button class="btn btn--ghost" type="button" data-close-dialog>close file</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="case-dialog" id="case-roadvision" aria-labelledby="case-roadvision-title">
+      <div class="case-dialog__inner">
+        <div class="case-dialog__head">
+          <div>
+            <p class="mini-kicker">CASE FILE // 001 &middot; OPEN SOURCE</p>
+            <h2 id="case-roadvision-title">RoadVision-AI</h2>
+            <p class="case-dialog__sub">Road survey intelligence from raw NSV footage.</p>
+          </div>
+          <button class="dialog-close" type="button" data-close-dialog aria-label="Close RoadVision-AI case file"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+        </div>
+        <dl class="case-meta">
+          <div><dt>Role</dt><dd>Full-stack design &amp; build</dd></div>
+          <div><dt>Type</dt><dd>Personal / open source</dd></div>
+          <div><dt>Status</dt><dd>Active</dd></div>
+          <div><dt>Camera modes</dt><dd>PAVE + ROW</dd></div>
+        </dl>
+        <div class="case-dialog__body">
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> mission</h3>
+            <p>Road agencies still inspect thousands of kilometres by hand. RoadVision turns ordinary survey footage into structured, GIS-ready condition data &mdash; detecting defects and assets, scoring road health, and exporting reports that fit existing workflows.</p>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> system</h3>
+            <ul class="case-list">
+              <li><strong>PAVE ensemble.</strong> Four YOLOv8 models run in parallel on downward-facing footage. Detections are merged with NMS, then filtered to reject white lane markings, zebra crossings, and painted arrows that look like cracks.</li>
+              <li><strong>ROW ensemble.</strong> Two models detect signs, barriers, lights, drainage, culverts, encroachments, and 30+ other road assets from forward and side-facing footage.</li>
+              <li><strong>Async processing.</strong> FastAPI handles the API while Celery workers process video in the background. The React dashboard exposes progress, a filterable gallery, a Leaflet map, chainage heatmaps, and AI replay with bounding boxes.</li>
+              <li><strong>Reporting.</strong> A report engine generates RIS DataTemplate Excel workbooks, PDF summaries, raw CSV, KML, and GeoJSON. A 0&ndash;100 Road Health Score combines IRI, defect density, and rut depth.</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> outcomes</h3>
+            <div class="case-metrics">
+              <div><strong>6</strong><span>models in parallel</span></div>
+              <div><strong>30+</strong><span>road features</span></div>
+              <div><strong>5</strong><span>export formats</span></div>
+              <div><strong>2</strong><span>camera pipelines</span></div>
+            </div>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> stack</h3>
+            <ul class="tags"><li>Python</li><li>FastAPI</li><li>Celery</li><li>React</li><li>YOLOv8</li><li>OpenCV</li><li>MongoDB</li><li>Redis</li><li>Leaflet</li></ul>
+          </div>
+        </div>
+        <div class="case-dialog__foot">
+          <a class="btn btn--primary" href="https://github.com/abhish12345/RoadVision-AI" target="_blank" rel="noopener noreferrer">view repository <svg class="icon" aria-hidden="true"><use href="#i-external"></use></svg></a>
+          <button class="btn btn--ghost" type="button" data-close-dialog>close file</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="case-dialog" id="case-aml" aria-labelledby="case-aml-title">
+      <div class="case-dialog__inner">
+        <div class="case-dialog__head">
+          <div>
+            <p class="mini-kicker">CASE FILE // 002 &middot; INDUSTRY</p>
+            <h2 id="case-aml-title">AML Risk Intelligence</h2>
+            <p class="case-dialog__sub">Adverse-media screening and weighted entity risk at scale.</p>
+          </div>
+          <button class="dialog-close" type="button" data-close-dialog aria-label="Close AML Risk Intelligence case file"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+        </div>
+        <dl class="case-meta">
+          <div><dt>Role</dt><dd>ML Engineer</dd></div>
+          <div><dt>Company</dt><dd>Azine Web Technologies</dd></div>
+          <div><dt>Type</dt><dd>Production platform</dd></div>
+          <div><dt>Scale</dt><dd>30K+ entities</dd></div>
+        </dl>
+        <div class="case-dialog__body">
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> mission</h3>
+            <p>Compliance teams were manually triaging thousands of entities against sanctions lists, PEP registers, and adverse news. The goal was a single risk surface that surfaced the right cases first &mdash; without drowning analysts in false positives.</p>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> system</h3>
+            <ul class="case-list">
+              <li><strong>Multi-source screening.</strong> Combined APC adverse media, PEP / SAN / KYB checks, and live news feeds into one entity record.</li>
+              <li><strong>Classification layer.</strong> DistilBERT and SVM models handled crime, sentiment, and relevance classification before scoring.</li>
+              <li><strong>Risk engine.</strong> A weighted 0&ndash;100 score blended source severity, recency, match confidence, and entity exposure so analysts could prioritise by risk rather than volume.</li>
+              <li><strong>Data pipelines.</strong> Selenium, BeautifulSoup, and PDFPlumber scraped and normalised data from 150+ government portals on three-day cron cycles.</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> outcomes</h3>
+            <div class="case-metrics">
+              <div><strong>+28%</strong><span>high-risk detection</span></div>
+              <div><strong>-65%</strong><span>manual effort</span></div>
+              <div><strong>200+</strong><span>sanctions datasets</span></div>
+              <div><strong>30K+</strong><span>entities monitored</span></div>
+            </div>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> stack</h3>
+            <ul class="tags"><li>DistilBERT</li><li>SVM</li><li>FastAPI</li><li>MongoDB</li><li>Selenium</li><li>BeautifulSoup</li><li>PDFPlumber</li></ul>
+          </div>
+        </div>
+        <div class="case-dialog__foot">
+          <a class="btn btn--primary" href="mailto:abhishekkumarnwd71@gmail.com?subject=AML%20Risk%20Intelligence%20walkthrough">request a walkthrough <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg></a>
+          <button class="btn btn--ghost" type="button" data-close-dialog>close file</button>
+        </div>
+      </div>
+    </dialog>
+    <dialog class="case-dialog" id="case-talk2db" aria-labelledby="case-talk2db-title">
+      <div class="case-dialog__inner">
+        <div class="case-dialog__head">
+          <div>
+            <p class="mini-kicker">CASE FILE // 006 &middot; PHOENIX LABS</p>
+            <h2 id="case-talk2db-title">Talk2DB: Autonomous NL-to-Query Agent</h2>
+            <p class="case-dialog__sub">Natural language to validated multi-database queries across SQL and NoSQL engines.</p>
+          </div>
+          <button class="dialog-close" type="button" data-close-dialog aria-label="Close Talk2DB case file"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+        </div>
+        <dl class="case-meta">
+          <div><dt>Role</dt><dd>AI &amp; ML Intern</dd></div>
+          <div><dt>Supported DBs</dt><dd>PostgreSQL, MySQL, MongoDB</dd></div>
+          <div><dt>Reliability</dt><dd>100% AST Syntax Validation</dd></div>
+          <div><dt>Latency</dt><dd>&lt; 180ms Query Synthesis</dd></div>
+        </dl>
+        <div class="case-dialog__body">
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> the challenge</h3>
+            <p>Operational teams needed instant business insights from production databases without writing complex SQL or MongoDB aggregations. Direct LLM-to-SQL approaches frequently produced hallucinated column names, invalid joins, and dangerous modification queries.</p>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> architecture &amp; pipeline</h3>
+            <div class="arch-diagram">
+              <div class="arch-flow">
+                <span class="arch-node">Natural Prompt</span>
+                <span class="arch-arrow">&rarr;</span>
+                <span class="arch-node arch-node--amber">Mem0 Schema Memory</span>
+                <span class="arch-arrow">&rarr;</span>
+                <span class="arch-node arch-node--cyan">AST Syntax Validator</span>
+                <span class="arch-arrow">&rarr;</span>
+                <span class="arch-node">Read-Only Execution</span>
+                <span class="arch-arrow">&rarr;</span>
+                <span class="arch-node arch-node--cyan">Synthesized Insight</span>
+              </div>
+            </div>
+            <ul class="case-list">
+              <li><strong>Dynamic Schema Memory:</strong> Integrated Mem0 to maintain an updated vector cache of table schemas, column foreign keys, and document schemas.</li>
+              <li><strong>AST Validation Sandbox:</strong> Parsed every generated query into an Abstract Syntax Tree (AST), rejecting non-SELECT or destructive statements (DROP/DELETE/UPDATE) before execution.</li>
+              <li><strong>Cross-Engine Compilation:</strong> Dynamic translation layer supporting both relational SQL (Postgres/MySQL) and NoSQL pipeline aggregation syntax (MongoDB).</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> stack</h3>
+            <ul class="tags"><li>FastAPI</li><li>Mem0</li><li>OpenAI</li><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Python</li><li>Docker</li></ul>
+          </div>
+        </div>
+        <div class="case-dialog__foot">
+          <a class="btn btn--primary" href="mailto:abhishekkumarnwd71@gmail.com?subject=Talk2DB%20Walkthrough%20Request">request agent demo <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg></a>
+          <button class="btn btn--ghost" type="button" data-close-dialog>close file</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="case-dialog" id="case-speaker" aria-labelledby="case-speaker-title">
+      <div class="case-dialog__inner">
+        <div class="case-dialog__head">
+          <div>
+            <p class="mini-kicker">CASE FILE // 003 &middot; INDUSTRY</p>
+            <h2 id="case-speaker-title">Real-Time Speaker ID</h2>
+            <p class="case-dialog__sub">Stateful voice biometrics with on-the-fly embedding search.</p>
+          </div>
+          <button class="dialog-close" type="button" data-close-dialog aria-label="Close Real-Time Speaker ID case file"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+        </div>
+        <dl class="case-meta">
+          <div><dt>Role</dt><dd>AI/ML Engineer</dd></div>
+          <div><dt>Company</dt><dd>Softel Solutions</dd></div>
+          <div><dt>Type</dt><dd>Production service</dd></div>
+          <div><dt>Accuracy</dt><dd>94%</dd></div>
+        </dl>
+        <div class="case-dialog__body">
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> mission</h3>
+            <p>Build a speaker identification module that could enroll new voices, identify returning speakers in real time, and stay accurate as the enrolled population grew past 250 people.</p>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> system</h3>
+            <ul class="case-list">
+              <li><strong>Voice embeddings.</strong> PyTorch and ECAPA-TDNN (Wav2Vec2) extract a compact speaker representation from short audio windows.</li>
+              <li><strong>Stateful enrollment.</strong> The service maintains a training and identification state per speaker, so new samples improve the profile without retraining a monolithic model.</li>
+              <li><strong>Vector matching.</strong> ChromaDB stores and queries speaker embeddings; the closest match is returned with a confidence score for the calling application.</li>
+              <li><strong>Deployment.</strong> FastAPI microservices and Docker keep the audio pipeline isolated, reproducible, and straightforward to scale.</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> outcomes</h3>
+            <div class="case-metrics">
+              <div><strong>94%</strong><span>recognition accuracy</span></div>
+              <div><strong>250+</strong><span>enrolled users</span></div>
+              <div><strong>RT</strong><span>embedding matching</span></div>
+              <div><strong>1</strong><span>stateful API</span></div>
+            </div>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> stack</h3>
+            <ul class="tags"><li>PyTorch</li><li>ECAPA-TDNN</li><li>Wav2Vec2</li><li>ChromaDB</li><li>FastAPI</li><li>Docker</li></ul>
+          </div>
+        </div>
+        <div class="case-dialog__foot">
+          <a class="btn btn--primary" href="mailto:abhishekkumarnwd71@gmail.com?subject=Speaker%20ID%20walkthrough">request a walkthrough <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg></a>
+          <button class="btn btn--ghost" type="button" data-close-dialog>close file</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="case-dialog" id="case-document" aria-labelledby="case-document-title">
+      <div class="case-dialog__inner">
+        <div class="case-dialog__head">
+          <div>
+            <p class="mini-kicker">CASE FILE // 004 &middot; INDUSTRY</p>
+            <h2 id="case-document-title">Document Intelligence</h2>
+            <p class="case-dialog__sub">Multi-country identity extraction under messy real-world conditions.</p>
+          </div>
+          <button class="dialog-close" type="button" data-close-dialog aria-label="Close Document Intelligence case file"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
+        </div>
+        <dl class="case-meta">
+          <div><dt>Role</dt><dd>ML Engineer</dd></div>
+          <div><dt>Company</dt><dd>Azine Web Technologies</dd></div>
+          <div><dt>Type</dt><dd>Production API</dd></div>
+          <div><dt>Accuracy</dt><dd>95%+ fields</dd></div>
+        </dl>
+        <div class="case-dialog__body">
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> mission</h3>
+            <p>Identity documents arrive blurry, rotated, skewed, and in several country formats. The system needed to locate the document, read a PDF417 barcode when present, and still extract key fields when the barcode was damaged.</p>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> system</h3>
+            <ul class="case-list">
+              <li><strong>Detection.</strong> A custom YOLOv11 model locates the document and field regions before any OCR runs.</li>
+              <li><strong>Preprocessing.</strong> OpenCV handles deskew, rotation, blur, contrast, and perspective correction.</li>
+              <li><strong>Barcode first.</strong> PDF417 decoding is the primary path for supported IDs, with PaddleOCR and Tesseract fallback for missing or unreadable fields.</li>
+              <li><strong>API delivery.</strong> FastAPI exposes a single extraction endpoint with structured field output for downstream identity verification.</li>
+            </ul>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> outcomes</h3>
+            <div class="case-metrics">
+              <div><strong>95%+</strong><span>field accuracy</span></div>
+              <div><strong>30%</strong><span>image degradation</span></div>
+              <div><strong>Multi</strong><span>country formats</span></div>
+              <div><strong>2</strong><span>OCR fallbacks</span></div>
+            </div>
+          </div>
+          <div class="case-section">
+            <h3><span aria-hidden="true">//</span> stack</h3>
+            <ul class="tags"><li>YOLOv11</li><li>OpenCV</li><li>PaddleOCR</li><li>Tesseract</li><li>FastAPI</li><li>Python</li></ul>
+          </div>
+        </div>
+        <div class="case-dialog__foot">
+          <a class="btn btn--primary" href="mailto:abhishekkumarnwd71@gmail.com?subject=Document%20Intelligence%20walkthrough">request a walkthrough <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg></a>
+          <button class="btn btn--ghost" type="button" data-close-dialog>close file</button>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="hacker.js" defer onerror="document.documentElement.classList.remove('js')"></script>
+  </body>
+</html>
