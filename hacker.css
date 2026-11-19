@@ -2031,14 +2031,16 @@ body.nav-open .nav-backdrop {
 .visual-tag {
   position: absolute;
   z-index: 2;
-  padding: 3px 5px;
-  border: 1px solid rgba(0, 255, 156, 0.22);
-  background: rgba(2, 8, 5, 0.72);
+  padding: 3px 6px;
+  border: 1px solid rgba(0, 255, 156, 0.28);
+  background: rgba(2, 8, 5, 0.88);
   color: var(--green-soft);
-  font-size: 7px;
+  font-size: 8px;
   letter-spacing: 0.08em;
   line-height: 1.4;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: none;
 }
 
 .visual-tag--tl {
@@ -2086,21 +2088,35 @@ body.nav-open .nav-backdrop {
 }
 
 .project__body h3 {
+  display: flex;
+  align-items: flex-start;
+  min-height: 2.6em;
   color: var(--ink);
-  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  font-size: clamp(1.12rem, 1.6vw, 1.35rem);
   font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 1.1;
+  letter-spacing: -0.03em;
+  line-height: 1.28;
 }
 
 .project--featured .project__body h3 {
-  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  min-height: auto;
+}
+
+.project--featured .project__body h3 {
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  line-height: 1.25;
+  letter-spacing: -0.035em;
 }
 
 .project__summary {
+  min-height: 56px;
   color: var(--muted);
   font-size: 10.5px;
   line-height: 1.78;
+}
+
+.project--featured .project__summary {
+  min-height: auto;
 }
 
 .project--featured .project__summary {
@@ -2125,10 +2141,13 @@ body.nav-open .nav-backdrop {
 .project__metrics strong {
   display: block;
   color: var(--green);
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  font-size: clamp(0.95rem, 1.5vw, 1.18rem);
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project__metrics span {
@@ -3557,6 +3576,18 @@ html.js .reveal-ready [data-reveal].is-visible {
 }
 
 @media (max-width: 560px) {
+  .project__metrics {
+    gap: 6px;
+  }
+
+  .project__metrics strong {
+    font-size: 0.95rem;
+  }
+
+  .project__metrics span {
+    font-size: 7px;
+  }
+
   .container {
     width: min(100% - 28px, var(--container));
   }
@@ -3858,6 +3889,14 @@ html.js .reveal-ready [data-reveal].is-visible {
 }
 
 @media (max-width: 390px) {
+  .project__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project__metrics li:last-child {
+    grid-column: 1 / -1;
+  }
+
   .container {
     width: calc(100% - 22px);
   }

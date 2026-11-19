@@ -109,7 +109,7 @@
   SoundFX.init();
 
   var CONTACT_ENDPOINT =
-    "https://script.google.com/macros/s/AKfycbxemCV2xYrBEPRo8WWQym7PHUsKiBPFtcHsrq0GJukbaA2hJ2_7m1x1oWitPtVlEJtL/exec";
+    "https://script.google.com/macros/s/AKfycbwFW7P2FEHgIbzFCveV87XkPJk75qKnA51Dvpd3Ehy7NPnHPzypKFHRxWFRBmA0xRXj_g/exec";
 
   var motionQuery = window.matchMedia
     ? window.matchMedia("(prefers-reduced-motion: reduce)")
@@ -471,8 +471,33 @@
   var spySections = $$("#home, #about, #terminal, #experience, #projects, #contact");
   var spyLinks = $$(".nav-link[href^='#']");
   var scrollTicking = false;
+  var activeSectionId = null;
+
+  // Geometry is measured once and reused. Reading scrollHeight / offsetTop
+  // after writing styles forces a synchronous layout on every scroll frame.
+  // Measurement is lazy: events only raise a dirty flag, and the actual read
+  // happens inside the rAF below (before any writes, after layout settles).
+  var scrollMetrics = { scrollable: 0, offsets: [] };
+  var scrollDirty = true;
+
+  var measureScroll = function () {
+    scrollDirty = false;
+    scrollMetrics.scrollable = Math.max(
+      0,
+      document.documentElement.scrollHeight - window.innerHeight
+    );
+    scrollMetrics.offsets = spySections.map(function (section) {
+      return section.offsetTop;
+    });
+  };
 
   var setActiveSection = function (currentId) {
+    if (currentId === activeSectionId) {
+      return;
+    }
+
+    activeSectionId = currentId;
+
     spyLinks.forEach(function (link) {
       var isActive = link.getAttribute("href") === "#" + currentId;
       link.classList.toggle("active", isActive);
@@ -486,28 +511,34 @@
   };
 
   var updateScrollState = function () {
-    var scrollTop = window.scrollY || window.pageYOffset;
-    var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollDirty) {
+      measureScroll();
+    }
 
+    var scrollTop = window.scrollY || window.pageYOffset;
+    var scrollable = scrollMetrics.scrollable;
+    var offsets = scrollMetrics.offsets;
+    var currentId = null;
+
+    if (spySections.length) {
+      var marker = scrollTop + window.innerHeight * 0.33;
+
+      for (var i = 0; i < offsets.length; i += 1) {
+        if (offsets[i] <= marker) {
+          currentId = spySections[i].id;
+        }
+      }
+    }
+
+    // All reads happen before the first write below.
     if (progressBar) {
       progressBar.style.transform =
         "scaleX(" + (scrollable > 0 ? Math.min(1, scrollTop / scrollable) : 0) + ")";
     }
 
-    if (!spySections.length) {
-      return;
+    if (currentId) {
+      setActiveSection(currentId);
     }
-
-    var marker = scrollTop + window.innerHeight * 0.33;
-    var currentId = spySections[0].id;
-
-    spySections.forEach(function (section) {
-      if (section.offsetTop <= marker) {
-        currentId = section.id;
-      }
-    });
-
-    setActiveSection(currentId);
   };
 
   var requestScrollUpdate = function () {
@@ -522,9 +553,27 @@
     });
   };
 
+  // Layout can change after fonts load, on resize, or when a filter or the
+  // terminal changes content height. These only flag the cache as stale; the
+  // re-measure runs on the next frame, when layout has already settled.
+  var invalidateScroll = function () {
+    scrollDirty = true;
+    requestScrollUpdate();
+  };
+
   window.addEventListener("scroll", requestScrollUpdate, { passive: true });
-  window.addEventListener("resize", requestScrollUpdate);
-  updateScrollState();
+  window.addEventListener("resize", invalidateScroll);
+  window.addEventListener("load", invalidateScroll);
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(invalidateScroll);
+  }
+
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(invalidateScroll).observe(document.body);
+  }
+
+  requestScrollUpdate();
 
   /* -----------------------------------------------------------------------
      Skill and project filters
@@ -594,6 +643,7 @@
 
   projectButtons.forEach(function (button) {
     button.addEventListener("click", function () {
+      SoundFX.playKeyClick();
       applyProjectFilter(button.getAttribute("data-project-filter"));
     });
   });
@@ -865,6 +915,21 @@
       SoundFX.playModalOpen();
     } else {
       dialog.setAttribute("open", "");
+    }
+
+    // Chrome can leave focus on the dialog's inner wrapper div, which is not
+    // keyboard-reachable. Land on the close button so Tab starts somewhere
+    // useful and screen readers announce a real control first.
+    var closeBtn = dialog.querySelector("[data-close-dialog]");
+    var active = document.activeElement;
+    var activeIsControl =
+      active !== dialog &&
+      dialog.contains(active) &&
+      typeof active.matches === "function" &&
+      active.matches("button, a[href], input, select, textarea");
+
+    if (closeBtn && !activeIsControl) {
+      closeBtn.focus();
     }
 
     syncDialogState();
@@ -1184,6 +1249,7 @@
         btn.classList.toggle("is-active", audioOn);
         btn.setAttribute("aria-pressed", String(audioOn));
       });
+      updateFxButtons("audio", audioOn);
       if (audioOn) {
         SoundFX.playCommandBlip();
       }
@@ -1201,8 +1267,13 @@
 
       document.documentElement.classList.toggle("matrix-on", matrixOn);
 
-      if (matrixOn && matrixRain) {
-        matrixRain.start();
+      if (matrixOn) {
+        if (!matrixRain && matrixCanvas) {
+          matrixRain = new MatrixRain(matrixCanvas);
+        }
+        if (matrixRain) {
+          matrixRain.start();
+        }
       } else if (matrixRain) {
         matrixRain.stop();
       }
@@ -1225,6 +1296,16 @@
       toggleFx(button.getAttribute("data-toggle"));
     });
   });
+
+  // Sound state is restored from localStorage inside SoundFX.init(), so sync
+  // the footer control before the first paint instead of showing "audio: off"
+  // while audio is actually enabled.
+  if (SoundFX.isEnabled()) {
+    updateFxButtons("audio", true);
+    $$('[data-toggle="audio"]').forEach(function (btn) {
+      btn.classList.add("is-active");
+    });
+  }
 
   /* -----------------------------------------------------------------------
      Matrix rain
@@ -1758,13 +1839,10 @@
       window
         .fetch(CONTACT_ENDPOINT, {
           method: "POST",
-          body: new FormData(form)
+          body: new FormData(form),
+          mode: "no-cors"
         })
-        .then(function (response) {
-          if (!response.ok) {
-            throw new Error("Request failed with status " + response.status);
-          }
-
+        .then(function () {
           form.reset();
           showStatus(
             "> transmission complete. message received — I'll respond within 24 hours.",
@@ -1776,11 +1854,36 @@
           }, 8000);
         })
         .catch(function (error) {
-          console.error("Contact form error:", error);
-          showStatus(
-            "> transmission failed. email abhishekkumarnwd71@gmail.com directly.",
-            "error"
-          );
+          console.error("Contact form error, attempting fallback:", error);
+          try {
+            var iframeName = "hidden_contact_iframe_hacker";
+            var iframe = document.getElementById(iframeName);
+            if (!iframe) {
+              iframe = document.createElement("iframe");
+              iframe.id = iframeName;
+              iframe.name = iframeName;
+              iframe.style.display = "none";
+              document.body.appendChild(iframe);
+            }
+            form.action = CONTACT_ENDPOINT;
+            form.method = "POST";
+            form.target = iframeName;
+            form.submit();
+            form.reset();
+            showStatus(
+              "> transmission complete. message received — I'll respond within 24 hours.",
+              "success"
+            );
+            statusResetTimer = window.setTimeout(function () {
+              showStatus("", null);
+            }, 8000);
+          } catch (fallbackErr) {
+            console.error("Contact fallback error:", fallbackErr);
+            showStatus(
+              "> transmission failed. email abhishekkumarnwd71@gmail.com directly.",
+              "error"
+            );
+          }
         })
         .finally(function () {
           if (submitButton) {
@@ -1795,14 +1898,27 @@
      Start canvas effects
      ----------------------------------------------------------------------- */
 
-  if (matrixCanvas) {
-    matrixRain = new MatrixRain(matrixCanvas);
-  }
-
+  // MatrixRain is built lazily inside toggleFx("matrix") so the default-off
+  // effect does not allocate columns or force layout during page load.
+  //
+  // The neural scene is built after load as well: constructing it mid-script
+  // makes the first geometric read force the document's entire initial layout
+  // synchronously, which shows up as a large forced reflow. The boot overlay
+  // covers the hero during that window, so nothing is visible late.
   var sceneCanvas = document.getElementById("scene-canvas");
 
   if (sceneCanvas && sceneCanvas.getContext) {
-    var neuralScene = new NeuralScene(sceneCanvas);
-    neuralScene.init();
+    var startNeuralScene = function () {
+      window.requestAnimationFrame(function () {
+        var neuralScene = new NeuralScene(sceneCanvas);
+        neuralScene.init();
+      });
+    };
+
+    if (document.readyState === "complete") {
+      startNeuralScene();
+    } else {
+      window.addEventListener("load", startNeuralScene, { once: true });
+    }
   }
 })();

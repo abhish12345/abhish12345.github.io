@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page not found | Abhishek Kumar</title>
+    <meta name="description" content="That page could not be found. Return to Abhishek Kumar's portfolio.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#030712">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .nf {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 48px 20px;
+        text-align: center;
+      }
+
+      .nf__inner {
+        max-width: 560px;
+      }
+
+      .nf__code {
+        font-size: clamp(72px, 18vw, 148px);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .nf__title {
+        margin-top: 18px;
+        font-size: clamp(22px, 4vw, 30px);
+        font-weight: 600;
+      }
+
+      .nf__text {
+        margin-top: 12px;
+        color: var(--muted-text-2);
+        font-size: 15px;
+      }
+
+      .nf__actions {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .nf__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px solid var(--border);
+        color: var(--light-text);
+        transition: transform var(--transition), border-color var(--transition), background var(--transition);
+      }
+
+      .nf__link:hover,
+      .nf__link:focus-visible {
+        transform: translateY(-2px);
+        border-color: var(--border-strong);
+      }
+
+      .nf__link--primary {
+        background: var(--gradient-primary);
+        border-color: transparent;
+        color: #04121d;
+      }
+
+      .nf__link:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      .nf__meta {
+        margin-top: 34px;
+        font-size: 13px;
+        color: var(--muted-text-2);
+      }
+
+      .nf__meta a {
+        color: var(--accent-soft);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="nf" id="main" tabindex="-1">
+      <div class="nf__inner">
+        <p class="nf__code" aria-hidden="true">404</p>
+        <h1 class="nf__title">This page took a wrong turn</h1>
+        <p class="nf__text">
+          The link you followed does not exist — it may have been moved, renamed, or never deployed.
+          The rest of the portfolio is one click away.
+        </p>
+
+        <div class="nf__actions">
+          <a class="nf__link nf__link--primary" href="/">Back to home</a>
+          <a class="nf__link" href="/#projects">View projects</a>
+          <a class="nf__link" href="/hacker">Hacker Mode</a>
+          <a class="nf__link" href="/#contact">Contact</a>
+        </div>
+
+        <p class="nf__meta">
+          Abhishek Kumar &middot; AI/ML Engineer &middot;
+          <a href="https://github.com/abhish12345" target="_blank" rel="noopener noreferrer">GitHub</a> &middot;
+          <a href="https://www.linkedin.com/in/abhishek-kumar-a26b3522a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

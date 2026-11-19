@@ -4,7 +4,7 @@ A fast, accessible portfolio for a Machine Learning & AI Engineer working across
 
 The default page is a clean, recruiter-friendly single-page site. An optional **Hacker Mode** adds a fully interactive, terminal-inspired experience without replacing the default.
 
-**Live site:** [personal-portfolio-jet-nine.vercel.app](https://personal-portfolio-jet-nine.vercel.app)
+**Live site:** [abhi-portfolio-green.vercel.app](https://abhi-portfolio-green.vercel.app)
 
 ![Portfolio preview](images/og-cover.jpg)
 
@@ -119,10 +119,10 @@ Any static host works as well — the site has no server-side dependencies.
 - Hero images are WebP: about 26 KB desktop and 37 KB mobile.
 - Montserrat is self-hosted as a 37 KB variable font, so no request is made to Google Fonts.
 - JetBrains Mono is self-hosted as a 31 KB variable font for Hacker Mode.
-- Logo is a transparent WebP recolored to the site’s cyan/violet palette.
-- Social preview is a 1200 × 630 JPEG at about 60 KB.
-- Résumé is a compact two-page PDF at about 7 KB.
+- Logo is a transparent WebP recolored to the site's cyan/violet palette.
+- Social preview is a 1200 Ã— 630 JPEG at about 60 KB.
+- RÃ©sumÃ© is a compact two-page PDF at about 7 KB.
 
 ## License and content
 
-The site content, résumé, and images belong to Abhishek Kumar. Please do not reuse the personal content without permission.
+The site content, rÃ©sumÃ©, and images belong to Abhishek Kumar. Please do not reuse the personal content without permission.

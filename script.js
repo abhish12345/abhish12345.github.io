@@ -7,7 +7,7 @@
   "use strict";
 
   var CONTACT_ENDPOINT =
-    "https://script.google.com/macros/s/AKfycbxemCV2xYrBEPRo8WWQym7PHUsKiBPFtcHsrq0GJukbaA2hJ2_7m1x1oWitPtVlEJtL/exec";
+    "https://script.google.com/macros/s/AKfycbwFW7P2FEHgIbzFCveV87XkPJk75qKnA51Dvpd3Ehy7NPnHPzypKFHRxWFRBmA0xRXj_g/exec";
 
   var prefersReducedMotion =
     window.matchMedia &&
@@ -417,6 +417,95 @@
   }
 
   /* -----------------------------------------------------------------------
+     Interactive Project Category Filters
+     ----------------------------------------------------------------------- */
+
+  var filterPills = document.querySelectorAll(".filter-pill");
+  var projectCards = document.querySelectorAll(".services-list .project-card");
+
+  if (filterPills.length && projectCards.length) {
+    filterPills.forEach(function (pill) {
+      pill.addEventListener("click", function () {
+        var category = pill.getAttribute("data-filter");
+
+        filterPills.forEach(function (p) {
+          var active = p === pill;
+          p.classList.toggle("is-active", active);
+          p.setAttribute("aria-selected", String(active));
+        });
+
+        projectCards.forEach(function (card) {
+          var cat = card.getAttribute("data-cat");
+          var show = category === "all" || cat === category;
+
+          if (show) {
+            card.classList.remove("is-hidden");
+            card.style.opacity = "0";
+            card.style.transform = "translateY(12px)";
+            window.requestAnimationFrame(function () {
+              card.style.transition = "opacity 280ms ease, transform 280ms ease";
+              card.style.opacity = "1";
+              card.style.transform = "translateY(0)";
+            });
+          } else {
+            card.classList.add("is-hidden");
+          }
+        });
+      });
+    });
+  }
+
+  /* -----------------------------------------------------------------------
+     Interactive 1-Click Clipboard Copy with Floating Toast
+     ----------------------------------------------------------------------- */
+
+  var toastEl = null;
+  var toastTimer = null;
+
+  var showToast = function (message) {
+    if (!toastEl) {
+      toastEl = document.createElement("div");
+      toastEl.className = "toast-notice";
+      toastEl.setAttribute("role", "status");
+      toastEl.setAttribute("aria-live", "polite");
+      document.body.appendChild(toastEl);
+    }
+
+    window.clearTimeout(toastTimer);
+    toastEl.innerHTML =
+      '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> ' +
+      message;
+    toastEl.classList.add("is-visible");
+
+    toastTimer = window.setTimeout(function () {
+      toastEl.classList.remove("is-visible");
+    }, 2800);
+  };
+
+  var copyContactItems = document.querySelectorAll('.contact-item[href^="mailto:"], .contact-item[href^="tel:"]');
+  copyContactItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+      var href = item.getAttribute("href");
+      var textToCopy = "";
+      var label = "";
+
+      if (href.startsWith("mailto:")) {
+        textToCopy = href.replace("mailto:", "");
+        label = "Email address";
+      } else if (href.startsWith("tel:")) {
+        textToCopy = href.replace("tel:", "");
+        label = "Phone number";
+      }
+
+      if (textToCopy && navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textToCopy).then(function () {
+          showToast(label + " copied to clipboard!");
+        }).catch(function () {});
+      }
+    });
+  });
+
+  /* -----------------------------------------------------------------------
      Contact form
      ----------------------------------------------------------------------- */
 
@@ -463,13 +552,10 @@
       window
         .fetch(CONTACT_ENDPOINT, {
           method: "POST",
-          body: new FormData(form)
+          body: new FormData(form),
+          mode: "no-cors"
         })
-        .then(function (response) {
-          if (!response.ok) {
-            throw new Error("Request failed with status " + response.status);
-          }
-
+        .then(function () {
           form.reset();
           showStatus(
             "Message sent successfully. I'll get back to you soon.",
@@ -481,11 +567,36 @@
           }, 8000);
         })
         .catch(function (error) {
-          console.error("Contact form error:", error);
-          showStatus(
-            "Sorry, your message could not be sent. Please email abhishekkumarnwd71@gmail.com directly.",
-            "error"
-          );
+          console.error("Contact form error, attempting fallback:", error);
+          try {
+            var iframeName = "hidden_contact_iframe";
+            var iframe = document.getElementById(iframeName);
+            if (!iframe) {
+              iframe = document.createElement("iframe");
+              iframe.id = iframeName;
+              iframe.name = iframeName;
+              iframe.style.display = "none";
+              document.body.appendChild(iframe);
+            }
+            form.action = CONTACT_ENDPOINT;
+            form.method = "POST";
+            form.target = iframeName;
+            form.submit();
+            form.reset();
+            showStatus(
+              "Message sent successfully. I'll get back to you soon.",
+              "success"
+            );
+            statusResetTimer = window.setTimeout(function () {
+              showStatus("", null);
+            }, 8000);
+          } catch (fallbackErr) {
+            console.error("Contact fallback error:", fallbackErr);
+            showStatus(
+              "Sorry, your message could not be sent. Please email abhishekkumarnwd71@gmail.com directly.",
+              "error"
+            );
+          }
         })
         .finally(function () {
           if (submitButton) {

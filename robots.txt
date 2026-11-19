@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://personal-portfolio-jet-nine.vercel.app/sitemap.xml
+Sitemap: https://abhi-portfolio-green.vercel.app/sitemap.xml
